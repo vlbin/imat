@@ -4,8 +4,10 @@ package iMat;
 import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class iMat extends Application {
@@ -21,6 +23,7 @@ public class iMat extends Application {
         
         stage.setTitle(bundle.getString("application.name"));
         stage.setScene(scene);
+        stage.setMaximized(true);
         stage.show();
     }
 

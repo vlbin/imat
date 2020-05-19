@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('/resources/fonts/Inter-Regular.otf');
+}
+@font-face {
+    font-family: 'Inter Bold';
+    src: url('/resources/fonts/Inter-Bold.otf');
+}
+@font-face {
+    font-family: 'Fredoka One';
+    src: url('/resources/fonts/FredokaOne-Regular.ttf');
+}
+
+Text, Button, TextField, Label {
+    -fx-font-family: 'Inter', sans-serif;
+}
+
+.header-text {
+    -fx-font-family: "Fredoka One", sans-serif;
+}
+
+/**/{;}
+.button {
+    -fx-font-size: 32px;
+}
+
+.form-input {
+    -fx-font-size: 24px;
+    -fx-padding: 0 0 0 16px;
+    -fx-prompt-text-fill: #868E96;
+    -fx-border-radius: 8px;
+}
+
+.text-large {
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+}
+
+.text-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-text-fill: #495057;
+    -fx-font-weight: bold;
+    -fx-underline: true;
+}
+
+.back-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-text-fill: #495057;
+}
+
+.progress-bar, .progress-circle {
+    -fx-fill: #C5C5C5;
+    -fx-stroke-width: 0;
+}
+
+.progress-circle.active, .progress-bar.active {
+    -fx-fill: #40C057;
+}
+
+.progress-label {
+    -fx-font-size: 28px;
+    -fx-text-fill: #8E8E8E;
+}
+
+.progress-label.active {
+    -fx-font-size: 28px;
+    -fx-text-fill: #000000;
+}
+
+.progress-number {
+    -fx-font-size: 24px;
+    -fx-text-fill: #8E8E8E;
+    -fx-font-weight: bold;
+}
+
+.progress-number.active {
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.form-text {
+    -fx-font-size: 32px;
+    -fx-text-fill: #495057;
+}
+
+.blank-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #495057;
+    -fx-border-color: #495057;
+    -fx-border-radius: 4px;
+}
+
+.green-button {
+    -fx-background-color: #40C057;
+    -fx-text-fill: #FFFFFF;
+}
+
+Button:hover, Button:pressed {
+    -fx-cursor: hand;
+}
+
+.green-button:hover {
+    -fx-background-color: #2f9e44;
+}
+
+.green-button:pressed {
+    -fx-background-color: #2b8a3e;
+}
+
+.blank-button:hover {
+    -fx-background-color: rgba(33, 37, 41, 0.1);
+}
+
+.blank-button:pressed {
+    -fx-background-color: rgba(33, 37, 41, 0.2);
+}
+
+.text-small {
+    -fx-font-size: 24px;
+}
+
+.text-medium {
+    -fx-font-size: 32px;
+}
+
+.delivery-pane, .delivery-time {
+    -fx-background-color: white;
+}
+
+.text-small.white {
+    -fx-fill: #FFFFFF;
+}
+
+.text-medium.active {
+    -fx-font-weight: bold;
+}
+
+.grid Line {
+    -fx-stroke: #495057;
+}
+
+.bold {
+    -fx-font-weight: bold;
+}
+
+AnchorPane {
+    -fx-background-color: #E9ECEF;
+}
+
+.text-medium.white {
+    -fx-fill: #FFFFFF;
+}
+
+.delivery-time.active {
+    -fx-background-color: #FAB005;
+}
+
+.delivery-pane.active {
+    -fx-background-color: #FAB005;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}

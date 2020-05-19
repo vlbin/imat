@@ -1,13 +1,272 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   
+<AnchorPane id="AnchorPane" fx:id="window" maxHeight="1080.0" maxWidth="1920.0" minHeight="1080.0" minWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMatController">
+   <children>
+      <AnchorPane fx:id="signupOne" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="903.0" layoutY="17.0" styleClass="header-text" text="iMat" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button layoutX="896.0" layoutY="844.0" mnemonicParsing="false" onAction="#completeSignUpOne" styleClass="green-button" text="Nästa" />
+            <Label layoutX="715.0" layoutY="944.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
+            <Button layoutX="1152.0" layoutY="944.0" mnemonicParsing="false" styleClass="text-button" text="här" />
+            <AnchorPane layoutX="341.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1238.0" stylesheets="@../../../imat.css">
+               <children>
+                  <Label layoutY="67.0" text="Personuppgifter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-label" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="493.0" layoutY="68.0" styleClass="progress-label" text="Leveransinformation" AnchorPane.bottomAnchor="0.0" />
+                  <Label layoutX="1025.0" layoutY="68.0" styleClass="progress-label" text="Betalningsinformation" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="114.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" styleClass="progress-bar" width="1000.0" />
+                  <Circle fill="DODGERBLUE" layoutX="114.0" layoutY="29.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-circle" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Circle>
+                  <Circle fill="DODGERBLUE" layoutX="614.0" layoutY="23.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" styleClass="progress-circle" AnchorPane.leftAnchor="596.0" AnchorPane.topAnchor="0.0" />
+                  <Circle fill="DODGERBLUE" layoutX="624.0" layoutY="33.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" styleClass="progress-circle" AnchorPane.leftAnchor="1096.0" AnchorPane.topAnchor="0.0" />
+                  <Label layoutX="107.0" layoutY="6.0" text="1">
+                     <styleClass>
+                        <String fx:value="progress-number" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="612.0" layoutY="6.0" styleClass="progress-number" text="2" />
+                  <Label layoutX="1112.0" layoutY="6.0" styleClass="progress-number" text="3" />
+               </children>
+            </AnchorPane>
+            <TextField fx:id="firstNameInput" accessibleRoleDescription="rd" layoutX="678.0" layoutY="273.0" prefHeight="64.0" prefWidth="272.0" promptText="Förnamn" styleClass="form-input" />
+            <TextField fx:id="lastNameInput" accessibleRoleDescription="rd" layoutX="966.0" layoutY="273.0" prefHeight="64.0" prefWidth="272.0" promptText="Efternamn" styleClass="form-input" />
+            <TextField fx:id="homePhoneInput" accessibleRoleDescription="rd" layoutX="678.0" layoutY="353.0" prefHeight="64.0" prefWidth="560.0" promptText="Telefonnummer (hem)" styleClass="form-input" />
+            <TextField fx:id="cellPhoneInput" accessibleRoleDescription="rd" layoutX="678.0" layoutY="433.0" prefHeight="64.0" prefWidth="560.0" promptText="Telefonnummer (mobil)" styleClass="form-input" />
+            <TextField fx:id="emailInput" accessibleRoleDescription="rd" layoutX="677.0" layoutY="513.0" prefHeight="64.0" prefWidth="560.0" promptText="E-postadress" styleClass="form-input" />
+            <TextField fx:id="repeatEmailInput" accessibleRoleDescription="rd" layoutX="677.0" layoutY="593.0" prefHeight="64.0" prefWidth="560.0" promptText="Upprepa e-postadress" styleClass="form-input" />
+            <PasswordField fx:id="passwordInput" layoutX="677.0" layoutY="673.0" prefHeight="64.0" prefWidth="560.0" promptText="Lösenord" styleClass="form-input" />
+            <PasswordField fx:id="repeatPasswordInput" layoutX="677.0" layoutY="753.0" prefHeight="64.0" prefWidth="560.0" promptText="Upprepa lösenord" styleClass="form-input" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="signupTwo" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="903.0" layoutY="17.0" styleClass="header-text" text="iMat" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button layoutX="898.0" layoutY="560.0" mnemonicParsing="false" onAction="#completeSignUpTwo" styleClass="green-button" text="Nästa" />
+            <Label layoutX="717.0" layoutY="655.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
+            <Button layoutX="1154.0" layoutY="655.0" mnemonicParsing="false" styleClass="text-button" text="här" />
+            <AnchorPane layoutX="341.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1238.0" stylesheets="@../../../imat.css">
+               <children>
+                  <Label layoutY="67.0" styleClass="progress-label" text="Personuppgifter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+                  <Label layoutX="493.0" layoutY="68.0" text="Leveransinformation" AnchorPane.bottomAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-label" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="1025.0" layoutY="68.0" styleClass="progress-label" text="Betalningsinformation" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="114.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" styleClass="progress-bar" width="1000.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="119.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" width="496.0">
+                     <styleClass>
+                        <String fx:value="progress-bar" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Rectangle>
+                  <Circle fill="DODGERBLUE" layoutX="114.0" layoutY="29.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-circle" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Circle>
+                  <Circle fill="DODGERBLUE" layoutX="614.0" layoutY="23.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="596.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-circle" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Circle>
+                  <Circle fill="DODGERBLUE" layoutX="624.0" layoutY="33.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" styleClass="progress-circle" AnchorPane.leftAnchor="1096.0" AnchorPane.topAnchor="0.0" />
+                  <Label layoutX="107.0" layoutY="6.0" text="1">
+                     <styleClass>
+                        <String fx:value="progress-number" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="612.0" layoutY="6.0" text="2">
+                     <styleClass>
+                        <String fx:value="progress-number" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="1112.0" layoutY="6.0" styleClass="progress-number" text="3" />
+               </children>
+            </AnchorPane>
+            <TextField fx:id="addressInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="313.0" prefHeight="64.0" prefWidth="560.0" promptText="Adress" styleClass="form-input" />
+            <TextField fx:id="postCodeInput" accessibleRoleDescription="rd" layoutX="681.0" layoutY="393.0" prefHeight="64.0" prefWidth="140.0" promptText="Postnr." styleClass="form-input" />
+            <TextField fx:id="cityInput" accessibleRoleDescription="rd" layoutX="837.0" layoutY="393.0" prefHeight="64.0" prefWidth="404.0" promptText="Postort" styleClass="form-input" />
+            <TextField fx:id="apartmentInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="472.0" prefHeight="64.0" prefWidth="560.0" promptText="Lägenhetsnummer" styleClass="form-input" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="903.0" layoutY="17.0" styleClass="header-text" text="iMat" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button layoutX="898.0" layoutY="568.0" mnemonicParsing="false" onAction="#completeSignUpThree" styleClass="green-button" text="Nästa" />
+            <TextField fx:id="cardNumberInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="393.0" prefHeight="64.0" prefWidth="560.0" promptText="Kortnummer" styleClass="form-input" />
+            <Label layoutX="717.0" layoutY="678.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
+            <Button layoutX="1154.0" layoutY="678.0" mnemonicParsing="false" styleClass="text-button" text="här" />
+            <AnchorPane layoutX="341.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1238.0" stylesheets="@../../../imat.css">
+               <children>
+                  <Label layoutY="67.0" styleClass="progress-label" text="Personuppgifter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+                  <Label layoutX="493.0" layoutY="68.0" styleClass="progress-label" text="Leveransinformation" AnchorPane.bottomAnchor="0.0" />
+                  <Label layoutX="1025.0" layoutY="68.0" text="Betalningsinformation" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-label" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="114.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" styleClass="progress-bar" width="1000.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="119.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" width="1000.0">
+                     <styleClass>
+                        <String fx:value="progress-bar" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Rectangle>
+                  <Circle fill="DODGERBLUE" layoutX="114.0" layoutY="29.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-circle" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Circle>
+                  <Circle fill="DODGERBLUE" layoutX="614.0" layoutY="23.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="596.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-circle" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Circle>
+                  <Circle fill="DODGERBLUE" layoutX="624.0" layoutY="33.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="1096.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-circle" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Circle>
+                  <Label layoutX="107.0" layoutY="6.0" text="1">
+                     <styleClass>
+                        <String fx:value="progress-number" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="612.0" layoutY="6.0" text="2">
+                     <styleClass>
+                        <String fx:value="progress-number" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="1112.0" layoutY="6.0" text="3">
+                     <styleClass>
+                        <String fx:value="progress-number" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <TextField fx:id="cardExpireMonthInput" accessibleRoleDescription="rd" layoutX="681.0" layoutY="473.0" prefHeight="64.0" prefWidth="176.0" promptText="MM" styleClass="form-input" />
+            <TextField fx:id="cardholderNameInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="313.0" prefHeight="64.0" prefWidth="560.0" promptText="Namn på kort" styleClass="form-input" />
+            <TextField fx:id="cardExpireYearInput" accessibleRoleDescription="rd" layoutX="873.0" layoutY="473.0" prefHeight="64.0" prefWidth="176.0" promptText="ÅÅ" styleClass="form-input" />
+            <TextField fx:id="cvvInput" accessibleRoleDescription="rd" layoutX="1065.0" layoutY="473.0" prefHeight="64.0" prefWidth="176.0" promptText="CVV" styleClass="form-input" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="903.0" layoutY="17.0" styleClass="header-text" text="iMat" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button layoutX="931.0" layoutY="568.0" mnemonicParsing="false" styleClass="green-button" text="Fortsätt" />
+            <Text layoutX="931.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Ditt konto är nu skapat!" />
+            <Text layoutX="931.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-text" text="Tack för att du väljet iMat!" />
+            <ImageView fitHeight="420.0" fitWidth="427.0" layoutX="449.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+
+            </ImageView>
+            <javafx.scene.layout.VBox layoutX="27.0" layoutY="126.0">
+                <Button layoutX="6.0" layoutY="3.0" mnemonicParsing="false" styleClass="back-button" text="&lt;&lt; Tillbaka" />
+            </javafx.scene.layout.VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="returningOrNew" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css">
+         <children>
+            <Text layoutX="592.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Har du handlat på iMat tidigare?" textAlignment="CENTER" />
+            <Button fx:id="returningCustomerButton" layoutX="704.0" layoutY="405.0" mnemonicParsing="false" onAction="#returningCustomerClicked" styleClass="green-button" text="Ja, fortsätt" />
+            <Button fx:id="newCustomerButton" layoutX="932.0" layoutY="404.0" mnemonicParsing="false" onAction="#newCustomerClicked" styleClass="blank-button" text="Nej, skapa konto" />
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="903.0" layoutY="17.0" text="iMat" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="loginScreen" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="862.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Logga in" textAlignment="CENTER" />
+            <Button layoutX="876.0" layoutY="585.0" mnemonicParsing="false" styleClass="green-button" text="Logga in" />
+            <TextField accessibleRoleDescription="rd" layoutX="680.0" layoutY="401.0" prefHeight="64.0" prefWidth="560.0" promptText="E-postadress" styleClass="form-input" />
+            <PasswordField layoutX="680.0" layoutY="480.0" prefHeight="64.0" prefWidth="560.0" promptText="Lösenord" styleClass="form-input" />
+            <Label layoutX="770.0" layoutY="699.0" styleClass="form-text" text="Glömt lösenord? Klicka" />
+            <Button layoutX="1119.0" layoutY="699.0" mnemonicParsing="false" styleClass="text-button" text="här" />
+            <Label layoutX="795.0" layoutY="970.0" styleClass="form-text" text="Inget konto? Klicka" />
+            <Button layoutX="1094.0" layoutY="970.0" mnemonicParsing="false" styleClass="text-button" text="här" />
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;">
+               <children>
+                  <Label layoutX="903.0" layoutY="17.0" text="iMat" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>
