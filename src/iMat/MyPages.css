@@ -1,0 +1,88 @@
+@font-face{
+    font-family: 'Fredoka One';
+    src: url('../iMat/resources/fonts/FredokaOne-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'Inter Regular';
+    src: url('../iMat/resources/fonts/Inter-Regular.ttf');
+}
+
+.root{
+
+    -fx-font-family: 'Inter Regular';
+
+}
+
+.imat-logo{
+
+    -fx-font-family: 'Fredoka One';
+    -fx-text-fill: #FFFFFF;
+
+}
+
+.mypages-header{
+
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+
+}
+
+
+.button-active{
+    -fx-fill: #DEE2E6;
+    -fx-stroke: #868E96;
+    -fx-stroke-width: 2;
+}
+
+.button{
+    -fx-fill: #FFFFFF;
+    -fx-stroke: #868E96;
+    -fx-stroke-width: 2;
+}
+
+.button:hover{
+    -fx-fill: #C4C4C4
+}
+
+.list-background{
+
+    -fx-focus-color: transparent;
+
+}
+
+.add-button{
+
+    -fx-background-color: #40C057;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 24;
+
+}
+
+.add-button:hover{
+
+    -fx-background-color: #30B047;
+
+}
+
+.add-button:pressed{
+
+    -fx-background-color: #50D067;
+
+}
+
+.my-information{
+
+    -fx-background-color:
+        #868E96,
+        #FFFFFF;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0px, 0px;
+
+}
+
+.background-items{
+
+    -fx-background-color: #E9ECEF;
+
+}

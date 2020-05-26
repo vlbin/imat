@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'Inter';
-    src: url('/resources/fonts/Inter-Regular.otf');
+    src: url('Inter-Regular.otf');
 }
 @font-face {
     font-family: 'Inter Bold';
-    src: url('/resources/fonts/Inter-Bold.otf');
+    src: url('Inter-Bold.otf');
 }
 @font-face {
     font-family: 'Fredoka One';
-    src: url('/resources/fonts/FredokaOne-Regular.ttf');
+    src: url('FredokaOne-Regular.ttf');
 }
 
 Text, Button, TextField, Label {
@@ -19,9 +19,103 @@ Text, Button, TextField, Label {
     -fx-font-family: "Fredoka One", sans-serif;
 }
 
-/**/{;}
+.required-symbol {
+    -fx-font-size: 24px;
+    -fx-fill: red;
+}
+
 .button {
     -fx-font-size: 32px;
+}
+
+.tab-pane {
+
+}
+
+.tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab-header-area {
+    -fx-padding: -1;
+}
+
+.tab-header-area .tab{
+    -fx-min-width:150;
+    -fx-pref-width:150;
+    -fx-max-width:150;
+    -fx-min-height: 120;
+    -fx-pref-height: 120;
+    -fx-max-height: 120;
+}
+
+.tab-down-button {
+    -fx-padding: 0;
+}
+
+.tab-down-button .arrow {
+    -fx-padding: 0;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container {
+    -fx-min-width:150;
+    -fx-pref-width:150;
+    -fx-max-width:150;
+}
+
+.tab {
+    -fx-background-color: white;
+    -fx-border-width: 0.5;
+    -fx-border-color: grey;
+}
+
+.tab:selected {
+    -fx-background-color: #FAB005;
+    -fx-font-weight: bold;
+}
+
+.toggle-button {
+    -fx-pref-height: 113;
+    -fx-pref-width: 350;
+}
+
+.toggle-button {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-size: 24px;
+}
+
+.toggle-button:focused,
+.toggle-button:selected,
+.toggle-button:selected:focused {
+    -fx-background-color: #FAB005;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.tab {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: white;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-min-width:140;
+    -fx-pref-width:140;
+    -fx-max-width:140;
+    -fx-font-size: 24px;
+    -fx-padding: -15 0 0 0;
+}
+
+.error {
+    -fx-border-width: 2;
+    -fx-text-box-border: red ;
+    -fx-focus-color: red ;
+    -fx-text-fill: red;
+    -fx-prompt-text-fill: rgba(255,0,0,0.3);
 }
 
 .form-input {

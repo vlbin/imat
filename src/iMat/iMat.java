@@ -1,6 +1,7 @@
 
 package iMat;
 
+import se.chalmers.cse.dat216.project.IMatDataHandler;
 import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +15,6 @@ public class iMat extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        
         ResourceBundle bundle = ResourceBundle.getBundle("iMat/iMatpro");
         
         Parent root = FXMLLoader.load(getClass().getResource("iMat.fxml"), bundle);
@@ -25,6 +25,7 @@ public class iMat extends Application {
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.show();
+
     }
 
     /**

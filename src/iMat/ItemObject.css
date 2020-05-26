@@ -1,0 +1,32 @@
+
+@font-face{
+    font-family: 'Inter Regular';
+    src: url('../iMat/resources/fonts/Inter-Regular.ttf');
+}
+
+.root{
+
+    -fx-font-family: 'Inter Regular';
+
+}
+
+
+.add-button{
+
+    -fx-background-color: #40C057;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 20;
+
+}
+
+.background-item{
+
+    -fx-outer-border: black;
+    -fx-body-color: #FFFFFF;
+    -fx-background-color:
+        -fx-outer-border,
+        -fx-body-color;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0px, 0px;
+
+}

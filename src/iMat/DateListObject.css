@@ -1,0 +1,42 @@
+
+@font-face{
+    font-family: 'Inter Regular';
+    src: url('../iMat/resources/fonts/Inter-Regular.ttf');
+}
+
+.root{
+
+    -fx-font-family: 'Inter Regular';
+
+}
+
+
+.background-item-active{
+    -fx-outer-border: black;
+    -fx-body-color: #DEE2E6;
+    -fx-background-color:
+        -fx-outer-border,
+        -fx-body-color;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0px, 0px;
+}
+
+.background-item{
+    -fx-outer-border: black;
+    -fx-body-color: #FFFFFF;
+    -fx-background-color:
+        -fx-outer-border,
+        -fx-body-color;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0px, 0px;
+}
+
+.background-item:hover{
+    -fx-outer-border: black;
+    -fx-body-color: #C4C4C4;
+    -fx-background-color:
+        -fx-outer-border,
+        -fx-body-color;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0px, 0px;
+}
