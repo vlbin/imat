@@ -11,11 +11,14 @@
     src: url('FredokaOne-Regular.ttf');
 }
 
-Text, Button, TextField, Label {
-    -fx-font-family: 'Inter', sans-serif;
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('BebasNeue-Regular.ttf');
 }
 
 .header-text {
+    -fx-font-size: 48px !important;
     -fx-font-family: "Fredoka One", sans-serif;
 }
 
@@ -27,20 +30,15 @@ Text, Button, TextField, Label {
 .button {
     -fx-font-size: 32px;
 }
-
-.tab-pane {
-
-}
-
-.tab-header-background {
+.delivery-screen .tab-header-background {
     -fx-background-color: transparent;
 }
 
-.tab-header-area {
+.delivery-screen .tab-header-area {
     -fx-padding: -1;
 }
 
-.tab-header-area .tab{
+.delivery-screen .tab-header-area .tab{
     -fx-min-width:150;
     -fx-pref-width:150;
     -fx-max-width:150;
@@ -57,19 +55,24 @@ Text, Button, TextField, Label {
     -fx-padding: 0;
 }
 
-.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container {
+.delivery-screen .tab-pane > .tab-header-area > .headers-region > .tab > .tab-container {
     -fx-min-width:150;
     -fx-pref-width:150;
     -fx-max-width:150;
 }
 
-.tab {
+.navbar-link {
+    -fx-font-family: 'Inter' !important;
+    -fx-background-color: transparent;
+}
+
+.delivery-screen .tab {
     -fx-background-color: white;
     -fx-border-width: 0.5;
     -fx-border-color: grey;
 }
 
-.tab:selected {
+.delivery-screen .tab:selected {
     -fx-background-color: #FAB005;
     -fx-font-weight: bold;
 }
@@ -93,16 +96,16 @@ Text, Button, TextField, Label {
     -fx-text-fill: white;
 }
 
-.tab {
+.delivery-screen .tab {
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
 
-.tab:selected .tab-label {
+.delivery-screen .tab:selected .tab-label {
     -fx-text-fill: white;
 }
 
-.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+.delivery-screen .tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
     -fx-min-width:140;
     -fx-pref-width:140;
     -fx-max-width:140;
@@ -126,8 +129,9 @@ Text, Button, TextField, Label {
 }
 
 .text-large {
-    -fx-font-size: 48px;
+    -fx-font-size: 48;
     -fx-font-weight: bold;
+    -fx-font-family: Inter;
 }
 
 .text-button {
@@ -153,7 +157,12 @@ Text, Button, TextField, Label {
     -fx-fill: #40C057;
 }
 
+.progress-number {
+    -fx-font-family: Inter;
+}
+
 .progress-label {
+    -fx-font-family: Inter;
     -fx-font-size: 28px;
     -fx-text-fill: #8E8E8E;
 }
@@ -178,6 +187,13 @@ Text, Button, TextField, Label {
 .form-text {
     -fx-font-size: 32px;
     -fx-text-fill: #495057;
+    -fx-font-family: Inter;
+}
+
+.error-text {
+    -fx-font-family: Inter;
+    -fx-font-size: 24px;
+    -fx-fill: red;
 }
 
 .blank-button {
@@ -213,11 +229,34 @@ Button:hover, Button:pressed {
 }
 
 .text-small {
+    -fx-font-family: Inter;
     -fx-font-size: 24px;
+}
+
+.cartButton {
+    -fx-background-color: #FFF;
+    -fx-background-radius: 1000px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 4, 0, 0, 4);
+}
+
+.cartButton:hover {
+    -fx-background-color: #dee2e6;
+    -fx-cursor: hand;
+}
+
+.cartButton:pressed {
+
+    -fx-background-color: #ced4da;
+    -fx-cursor: hand;
 }
 
 .text-medium {
     -fx-font-size: 32px;
+    -fx-font-family: Inter;
+}
+
+.tab-pane .text {
+    -fx-font-family: Inter;
 }
 
 .delivery-pane, .delivery-time {
@@ -256,4 +295,277 @@ AnchorPane {
     -fx-background-color: #FAB005;
     -fx-scale-x: 1.1;
     -fx-scale-y: 1.1;
+}
+
+/* CHRISTIAN CSS */
+
+.flowPaneColor{
+    -fx-background-color: #E9ECEF;
+}
+
+.higherButton{
+    -fx-background-color: #0dbb29;
+    -fx-cursor: hand;
+    -fx-border-radius: 0.0;
+    -fx-background-radius: 0.0;
+    -fx-border: 0.0;
+}
+
+.higherButton:hover{
+    -fx-background-color: #027814;
+}
+
+.higherButton:pressed{
+    -fx-background-color: #065d13;
+}
+
+.lowerButton{
+    -fx-background-color: #e4dfdf;
+    /*-fx-background-color: #F03E3E;*/
+    -fx-cursor: hand;
+    -fx-border-radius: 0.0;
+    -fx-background-radius: 0.0;
+}
+
+.lowerButton:hover{
+    /*-fx-background-color: #a11414;*/
+
+}
+
+.lowerButton:pressed{
+    /*-fx-background-color: #5a0e0e;	*/
+}
+
+.plusMinusButton:hover > .higherButton{
+    -fx-fill: #0dbb29;
+}
+
+.searchBar{
+    -fx-border-radius: 10.0;
+    -fx-background-radius: 10.0;
+    -fx-font-family: "Inter";
+    -fx-font-size: 24.0;
+}
+
+.navbar{
+    -fx-background-color: #FCFCFC;
+}
+
+.navbar-text{
+    -fx-font-family: "Fredoka One";
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+}
+
+.navbar-search{
+
+}
+
+.menuItem{
+    -fx-border-width: 0.0 0.0 1.0px 0.0;
+    -fx-border-color: #adb5bd;
+    -fx-font-size: 24.0;
+    /* -fx-border-radius: 1.0px;*/
+}
+
+.menuItem:hover {
+    -fx-background-color: #dee2e6;
+    -fx-cursor: hand;
+}
+
+.menuItem:pressed {
+    -fx-background-color: #ced4da;
+    -fx-cursor: hand;
+}
+
+.text{
+    -fx-font-size: 28px;
+}
+
+.ProductItem{
+    -fx-background-color: #E9ECEF;
+}
+
+.ProductItem:hover{
+    -fx-background-color: #E9ECEF;
+}
+
+.scrollPane {
+    -fx-background-color: transparent;
+}
+
+.anchorWhite{
+    -fx-background-color: #E9ECEF;
+}
+
+.welcome {
+    -fx-font-family: "Inter Bold";
+    -fx-font-size: 48.0;
+}
+
+.under-welcome{
+    -fx-font-family: "Inter";
+    -fx-font-size: 24.0;
+    -fx-text-align: center;
+}
+
+.bestPrice {
+    -fx-fill: white;
+    -fx-font-family: Bebas Neue;
+    -fx-font-weight: bold;
+    -fx-font-size: 28.0;
+    -fx-alignment: Center;
+}
+
+.clear-from-cart:hover, .clear-from-cart:pressed {
+    -fx-cursor: hand;
+}
+
+.productName{
+    -fx-font-family: "Inter";
+    -fx-font-size: 30.0;
+    -fx-font-weight: NORMAL;
+}
+
+.productPrice{
+    -fx-font-family: "Inter";
+    -fx-font-size: 24.0;
+    -fx-font-weight: NORMAL;
+}
+
+.productBought{
+    -fx-font-family: "Inter";
+    -fx-font-size: 24.0;
+}
+
+.closeButtonProduct{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.nameProduct{
+    -fx-font-family: "Inter Bold";
+    -fx-font-size: 32.0;
+    -fx-alignment: BASELINE_RIGHT;
+}
+
+.priceProduct{
+    -fx-font-family: "Inter Bold";
+    -fx-font-size: 32.0;
+    -fx-alignment: BASELINE_RIGHT;
+}
+
+.boughtProduct{
+    -fx-font-family: "Inter";
+    -fx-font-size: 32.0;
+    -fx-border: none;
+    -fx-background-color: #E9ECEF;
+    -fx-border-radius: 0.0;
+    -fx-background-radius: 0.0;
+    -fx-border: 0.0;
+}
+
+.text-normal {
+    -fx-font-family: Inter;
+}
+
+.text-field, .button, .label {
+    -fx-font-family: Inter;
+}
+
+.imat-logo{
+    -fx-font-size: 48.0;
+    -fx-font-family: 'Fredoka One';
+    -fx-fill: #FFFFFF;
+
+}
+
+.labelOther{
+    -fx-font-family: "Inter";
+    -fx-font-size: 28.0;
+    -fx-font-weight: bold;
+}
+
+.textOther{
+    -fx-font-family: "Inter";
+    -fx-font-size: 24.0;
+}
+
+.anchorProductView{
+    -fx-background-color: white;
+}
+
+.ProductAnchor{
+    -fx-background-color: rgba(100.0, 100.0, 100.0, 0.6);
+}
+
+.amountProduct{
+    -fx-font-family: "Inter";
+    -fx-font-size: 28.0;
+}
+
+.ProductItemAnchor{
+    -fx-background-color: white;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 4, 0, 0, 4);
+    -fx-background-radius: 4px;
+}
+
+.boughtField{
+    -fx-font-family: "Inter";
+    -fx-font-size: 24.0;
+    -fx-background-color: #E9ECEF;
+    -fx-border-radius: 0.0;
+    -fx-background-radius: 0.0;
+    -fx-border: 0.0;
+
+}
+
+.tab1, .tab2, .tab3{
+    -fx-border: none;
+    -fx-pref-width: 230.0;
+    -fx-pref-height: 70.0;
+    -fx-padding: 0.0;
+    -fx-margin: 0.0;
+    -fx-background-color: #e9ecef;
+}
+
+.tab1:hover, .tab2:hover, .tab3:hover{
+    -fx-cursor: hand;
+}
+
+.anchorProductView .tab-pane > .tab-header-area > .headers-region {
+    -fx-background-color: #e9ecef;
+    -fx-padding: 0.0;
+}
+
+.tab-down-button {
+    -fx-padding: 0.0;
+}
+
+.tab-down-button .arrow {
+    -fx-padding: 0.0;
+}
+
+.anchorProductView .tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-alignment: CENTER;
+    -fx-pref-width: 230.0;
+    -fx-pref-height: 90.0;
+    -fx-padding: -15.0 0.0 -15.0 0.0;
+    -fx-margin: 0.0;
+    -fx-font-family: "Inter";
+    -fx-font-size: 24.0;
+}
+
+.anchorProductView .tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.anchorProductView .tab-pane .tab:selected {
+    -fx-background-color: #ADB5BD;
+}
+
+.anchorProductView .tab-header-area {
+    -fx-padding: 0.0;
 }

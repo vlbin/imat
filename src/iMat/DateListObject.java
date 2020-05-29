@@ -1,4 +1,4 @@
-package MyPages;
+package iMat;
 
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -14,10 +14,10 @@ public class DateListObject extends AnchorPane {
 
     @FXML private Label label_dateitem;
     private int index;
-    private MyPages controller;
+    private iMatController controller;
     private String label;
 
-    public DateListObject(Date date, int index, MyPages controller){
+    public DateListObject(Date date, int index, iMatController controller){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DateListObject.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);

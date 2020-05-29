@@ -24,7 +24,20 @@ public class iMat extends Application {
         stage.setTitle(bundle.getString("application.name"));
         stage.setScene(scene);
         stage.setMaximized(true);
+
         stage.show();
+        Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX(primaryScreenBounds.getMinX());
+        stage.setY(primaryScreenBounds.getMinY());
+        stage.setWidth(primaryScreenBounds.getWidth());
+        stage.setHeight(primaryScreenBounds.getHeight());
+    }
+
+    @Override
+    public void stop() {
+        IMatDataHandler.getInstance().getShoppingCart().clear();
+        //IMatDataHandler.getInstance().reset();
+        IMatDataHandler.getInstance().shutDown();
 
     }
 

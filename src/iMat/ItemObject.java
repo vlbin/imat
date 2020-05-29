@@ -1,4 +1,4 @@
-package MyPages;
+package iMat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,11 +17,14 @@ public class ItemObject extends AnchorPane {
     @FXML Label item_amount;
     @FXML Label item_price;
 
-    public ItemObject(ShoppingItem item){
+    private ShoppingItem item;
+    private iMatController parentController;
+    public ItemObject(ShoppingItem item, iMatController parentController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ItemObject.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-
+        this.item = item;
+        this.parentController = parentController;
         try{
             fxmlLoader.load();
         }catch (IOException exception){
@@ -33,6 +36,11 @@ public class ItemObject extends AnchorPane {
         item_amount.setText("" + (int)item.getAmount() + " st");
         item_price.setText("" + item.getAmount() * item.getProduct().getPrice() + "kr");
 
+    }
+
+    @FXML
+    public void addItemFromOrder() {
+        parentController.addItemFromOrder(item);
     }
 
 }

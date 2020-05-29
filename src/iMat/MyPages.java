@@ -1,4 +1,4 @@
-package MyPages;
+package iMat;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -65,7 +65,7 @@ public class MyPages extends AnchorPane {
         List<Order> orders = IMatDataHandler.getInstance().getOrders();
         for(int i = 0; i < orders.size(); i++){
             Date date = orders.get(i).getDate();
-            DateListObject dateListObject = new DateListObject(date, i, this);
+            DateListObject dateListObject = new DateListObject(date, i, new iMatController());
             date_list.getChildren().add(dateListObject);
         }
 
@@ -94,7 +94,7 @@ public class MyPages extends AnchorPane {
         order_header.setText("Order: " + headerName);
         product_list.getChildren().clear();
         for(ShoppingItem item : order.getItems()){
-            ItemObject itemObject = new ItemObject(item);
+            ItemObject itemObject = new ItemObject(item,null);
             product_list.getChildren().add(itemObject);
         }
 

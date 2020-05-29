@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<fx:root onMouseClicked="#closeProductView" prefHeight="1080.0" prefWidth="1920.0" styleClass="ProductAnchor" stylesheets="@imat.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+         <children>
+      <AnchorPane layoutX="100.0" layoutY="100.0" maxWidth="-Infinity" onMouseClicked="#mousetrap" prefHeight="880.0" prefWidth="1490.0" styleClass="anchorProductView" AnchorPane.leftAnchor="215.0">
+         <children>
+            <Button layoutX="1640.0" layoutY="40.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#closeProductView" onMouseEntered="#closeButtonMouseEntered" onMouseExited="#closeButtonMouseExited" onMousePressed="#closeButtonMousePressed" prefHeight="40.0" prefWidth="40.0" styleClass="closeButtonProduct" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
+               <graphic>
+                  <ImageView fx:id="closeProduct" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/Group%201.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <TabPane layoutX="710.0" layoutY="283.0" pickOnBounds="false" prefHeight="490.0" prefWidth="690.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Produktfakta">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="15.0" layoutY="10.0" styleClass="labelOther" text="Ursprung" />
+                              <Label layoutX="15.0" layoutY="95.0" styleClass="labelOther" text="Tillverkningsland" />
+                              <Label layoutX="15.0" layoutY="180.0" styleClass="labelOther" text="Produktbeskrivning" />
+                              <Text layoutX="15.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textOther" text="Sverige" wrappingWidth="450.0" />
+                              <Text layoutX="15.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textOther" text="Hel, färsk majskyckling från utvalda svenska gårdar av den högsta kvalitén. Undrar du vad som är skillnaden mellan vanlig kyckling och majskyckling? Jo, majskycklingar är uppfödda på majs istället för vete, och får därför ett gulare skinn och ett mörkare kött. Men framför allt är majskyckling alldeles fantastiskt saftig, mör och smakrik, med mild sötma från majsen." wrappingWidth="615.0" />
+                              <Text layoutX="15.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textOther" text="Köttursprung: Sverige" wrappingWidth="450.0" />
+                           </children></AnchorPane>
+                  </content>
+                     <styleClass>
+                        <String fx:value="tab1" />
+                        <String fx:value="tab" />
+                     </styleClass>
+                </Tab>
+                <Tab text="Näringsinnehåll">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                                    <Rectangle fill="WHITE" height="60.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="690.0" />
+                                    <Rectangle fill="#e9ecef" height="60.0" layoutY="60.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="690.0" />
+                                    <Rectangle fill="WHITE" height="60.0" layoutY="120.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="690.0" />
+                                    <Rectangle fill="#e9ecef" height="60.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="690.0" />
+                                    <Rectangle fill="WHITE" height="60.0" layoutY="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="690.0" />
+                                    <Rectangle fill="#e9ecef" height="60.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="690.0" />
+                                    <Text layoutX="15.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Fett" wrappingWidth="230.0">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="445.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="2,5 gram" textAlignment="RIGHT" wrappingWidth="230.0">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="15.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Varav mättat fett" wrappingWidth="230.0">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="15.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="kolhydrat" wrappingWidth="230.0">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="15.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="varav sockerarter" wrappingWidth="325.0">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="15.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="protein" wrappingWidth="230.0">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="15.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="salt" wrappingWidth="230.0">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="445.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="1,8 gram" textAlignment="RIGHT" wrappingWidth="230.0">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="445.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="11 gram" textAlignment="RIGHT" wrappingWidth="230.0">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="445.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="7 gram" textAlignment="RIGHT" wrappingWidth="230.0">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="445.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="2 gram" textAlignment="RIGHT" wrappingWidth="230.0">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="445.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="&gt;0,5 gram" textAlignment="RIGHT" wrappingWidth="230.0">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                     <styleClass>
+                        <String fx:value="tab2" />
+                        <String fx:value="tab" />
+                     </styleClass>
+                </Tab>
+                <Tab text="Övrigt">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text layoutX="15.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textOther" text="Kylvara högst +8°C" wrappingWidth="450.0" />
+                              <Text layoutX="15.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textOther" text="Kylvara minst 0°C" wrappingWidth="450.0" />
+                              <Text layoutX="15.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textOther" text="Tillaga hela majskycklingen i ugn i ca 200°C i ca 60 min. Majskycklingen är klar när köttet lätt lossnar från benen, kärntemperaturen är 82°C och köttsaften är helt klar utan rosa inslag." wrappingWidth="450.0" />
+                              <Label layoutX="15.0" layoutY="10.0" styleClass="labelOther" text="Maximum förvaringstemperatur" />
+                              <Label layoutX="15.0" layoutY="95.0" styleClass="labelOther" text="Minimum förvaringstemperatur" />
+                              <Label layoutX="15.0" layoutY="180.0" styleClass="labelOther" text="Tillagningsbeskrivning" />
+                           </children></AnchorPane>
+                  </content>
+                     <styleClass>
+                        <String fx:value="tab3" />
+                        <String fx:value="tab" />
+                     </styleClass>
+                </Tab>
+              </tabs>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TabPane>
+                  <ImageView fx:id="imageProduct" fitHeight="260.0" fitWidth="340.0" layoutX="230.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" />
+                  <Rectangle fill="#f03e3e" height="60.0" layoutX="430.0" layoutY="566.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="140.0" />
+                  <Rectangle fill="#fab005" height="60.0" layoutX="425.0" layoutY="561.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="140.0" />
+                  <Text fx:id="specialPriceProduct" fill="WHITE" layoutX="430.0" layoutY="602.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="bestPrice" text="Text" textAlignment="CENTER" wrappingWidth="140.0">
+                     <font>
+                        <Font name="Arial Narrow" size="28.0" />
+                     </font>
+                  </Text>
+            <TextField fx:id="amountProduct" alignment="CENTER" layoutX="790.0" layoutY="180.0" prefHeight="81.0" prefWidth="168.0" styleClass="boughtProduct" text="0" />
+            <Button layoutX="958.0" layoutY="180.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#addThisItem" prefHeight="80.0" prefWidth="80.0" styleClass="higherButton">
+               <graphic>
+                  <Group>
+                     <children>
+                              <Line endX="50.0" fill="WHITE" stroke="WHITE" strokeWidth="4.0" />
+                              <Line endX="50.0" fill="WHITE" rotate="90.0" stroke="WHITE" strokeWidth="4.0" />
+                     </children>
+                  </Group>
+               </graphic>
+            </Button>
+            <Button fx:id="buttonLower" layoutX="710.0" layoutY="180.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#removeThisItem" onMouseEntered="#hoverColor" onMouseExited="#outsideColor" onMousePressed="#pressedColor" prefHeight="80.0" prefWidth="80.0" styleClass="lowerButton">
+               <graphic>
+                        <Line endX="50.0" fill="#e8e8e8" stroke="WHITE" strokeWidth="4.0" />
+               </graphic>
+            </Button>
+            <Text fx:id="nameProduct" layoutX="230.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nameProduct" text="Text" textAlignment="RIGHT" wrappingWidth="340.0" />
+            <Text fx:id="numberProduct" layoutX="230.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="amountProduct" text="Text" textAlignment="RIGHT" wrappingWidth="340.0" />
+            <Text fx:id="priceProduct" layoutX="230.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="priceProduct" text="Text" textAlignment="RIGHT" wrappingWidth="340.0" />
+         </children>
+      </AnchorPane>
+         </children>
+</fx:root>
