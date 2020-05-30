@@ -61,7 +61,7 @@ public class ProductWindow extends AnchorPane {
 		priceProduct.setText(Double.toString(item.getProduct().getPrice()) + " kr");
 		Image image = parentController.getImage(item.getProduct(), 340, 260);
 		imageProduct.setImage(image);
-		addTextLimiter(amountProduct, 3);
+		addTextLimiter(amountProduct, 2);
 		changeText();
 		outsideColor();
 	}

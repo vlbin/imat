@@ -34,10 +34,14 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 	private Group SpecialpriceBackground;
 	@FXML
 	private Button buttonLower;
+	@FXML
+	private Button buttonHigher;
+	@FXML
+	private Text pricespecial;
 	private iMatController parentController;
 	private ShoppingItem item;
 
-	public ProductItem(ShoppingItem item, iMatController parentController, String specialPric) {
+	public ProductItem(ShoppingItem item, iMatController parentController, int specialPric) {
 		this.item = item;
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ProductItem.fxml"));
 		fxmlLoader.setRoot(this);
@@ -48,23 +52,31 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 		} catch (IOException exception) {
 			throw new RuntimeException(exception);
 		}
-		if (specialPric.equals("no")) {
+		price.setText(Double.toString(item.getProduct().getPrice()) + " kr");
+		if (specialPric == 0) {
 			specialPrice.setVisible(false);
 			SpecialpriceBackground.setVisible(false);
+			pricespecial.setVisible(false);
 		} else {
-			specialPrice.setText(specialPric);
+			iMatController.addDefaultPrice(item.getProduct());
+			specialPrice.setText(Integer.toString(specialPric) + "% rabatt");
 			specialPrice.setStyle("-fx-font-family: \"Bebas Neue\";");
+			price.setStrikethrough(true);
+			double sum = parentController.getPrice(item.getProduct(), specialPric);
+			item.getProduct().setPrice(sum);
+			pricespecial.setText(sum + " kr");
+
 		}
 		StringBuilder sb = new StringBuilder(item.getProduct().getName());
 		if (sb.length() > 17) {
 			sb.replace(14, sb.length(), "...");
 		}
 		productName.setText(sb.toString());
-		price.setText(Double.toString(item.getProduct().getPrice()) + " kr");
+
 		productImage.setImage(parentController.getImage(item.getProduct(), 220, 136));
 		this.parentController = parentController;
 		changeText();
-		addTextLimiter(bought, 3);
+		addTextLimiter(bought, 2);
 	}
 
 	public ShoppingItem getItem() {
@@ -83,14 +95,23 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 
 	@FXML
 	protected void addThisItem(Event event) {
-		parentController.increaseItem(item);
-		changeText();
-		outsideColor();
-		event.consume();
+		if (!bought.getText().equals("99")) {
+			parentController.increaseItem(item);
+			changeText();
+			outsideColor();
+			event.consume();
+			if (bought.getText().equals("99")) {
+				buttonHigher.setStyle("-fx-cursor: default;");
+				buttonHigher.setStyle("-fx-background-color: #e4dfdf;");
+			}
+		}
+
 	}
 
 	@FXML
 	protected void removeThisItem(Event event) {
+		buttonHigher.setStyle("-fx-background-color: #0dbb29;");
+		buttonHigher.setStyle("-fx-cursor: Hand;");
 		parentController.decreaseItem(item);
 		changeText();
 		hoverColor();
@@ -99,7 +120,7 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 
 	@FXML
 	protected void changedText() {
-		//susem.out.println(bought.getText());
+		// susem.out.println(bought.getText());
 		if (parentController.isNumeric(bought.getText())) {
 			double temp = Double.parseDouble(bought.getText());
 			if (temp > -1) {
