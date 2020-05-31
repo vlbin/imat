@@ -37,13 +37,9 @@
                   <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
                </children>
             </AnchorPane>
-<<<<<<< HEAD
             <Button layoutX="896.0" layoutY="844.0" mnemonicParsing="false" onAction="#completeSignUpOne" styleClass="green-button" text="Nästa" />
             <Label layoutX="731.0" layoutY="980.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
             <Button layoutX="1137.0" layoutY="980.0" mnemonicParsing="false" onAction="#goToLogin" styleClass="text-button" text="här" />
-=======
-            <Label layoutX="731.0" layoutY="980.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
             <AnchorPane layoutX="335.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1250.0" stylesheets="@../../../imat.css">
                <children>
                   <Label layoutY="67.0" text="Personuppgifter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
@@ -73,16 +69,6 @@
                   <Label layoutX="1110.0" layoutY="6.0" styleClass="progress-number" text="3" />
                </children>
             </AnchorPane>
-<<<<<<< HEAD
-            <TextField fx:id="firstNameInput" accessibleRoleDescription="rd" layoutX="678.0" layoutY="273.0" prefHeight="64.0" prefWidth="272.0" promptText="Förnamn" styleClass="form-input" />
-            <TextField fx:id="lastNameInput" accessibleRoleDescription="rd" layoutX="966.0" layoutY="273.0" prefHeight="64.0" prefWidth="272.0" promptText="Efternamn" styleClass="form-input" />
-            <TextField fx:id="homePhoneInput" accessibleRoleDescription="rd" layoutX="678.0" layoutY="353.0" prefHeight="64.0" prefWidth="560.0" promptText="Telefonnummer (hem)" styleClass="form-input" />
-            <TextField fx:id="cellPhoneInput" accessibleRoleDescription="rd" layoutX="678.0" layoutY="433.0" prefHeight="64.0" prefWidth="560.0" promptText="Telefonnummer (mobil)" styleClass="form-input" />
-            <TextField fx:id="emailInput" accessibleRoleDescription="rd" layoutX="677.0" layoutY="513.0" prefHeight="64.0" prefWidth="560.0" promptText="E-postadress" styleClass="form-input" />
-            <TextField fx:id="repeatEmailInput" accessibleRoleDescription="rd" layoutX="677.0" layoutY="593.0" prefHeight="64.0" prefWidth="560.0" promptText="Upprepa e-postadress" styleClass="form-input" />
-            <PasswordField fx:id="passwordInput" layoutX="677.0" layoutY="673.0" prefHeight="64.0" prefWidth="560.0" promptText="Lösenord" styleClass="form-input" />
-            <PasswordField fx:id="repeatPasswordInput" layoutX="677.0" layoutY="753.0" prefHeight="64.0" prefWidth="560.0" promptText="Upprepa lösenord" styleClass="form-input" />
-=======
             <TextField fx:id="firstNameInput" accessibleRoleDescription="rd" layoutX="678.0" layoutY="273.0" onAction="#completeSignUpOne" prefHeight="64.0" prefWidth="272.0" promptText="Förnamn" styleClass="form-input" />
             <TextField fx:id="lastNameInput" accessibleRoleDescription="rd" layoutX="966.0" layoutY="273.0" onAction="#completeSignUpOne" prefHeight="64.0" prefWidth="272.0" promptText="Efternamn" styleClass="form-input" />
             <TextField fx:id="homePhoneInput" accessibleRoleDescription="rd" layoutX="678.0" layoutY="353.0" onAction="#completeSignUpOne" prefHeight="64.0" prefWidth="560.0" promptText="Telefonnummer (hem)" styleClass="form-input" />
@@ -93,7 +79,6 @@
             <PasswordField fx:id="repeatPasswordInput" layoutX="677.0" layoutY="753.0" onAction="#completeSignUpOne" prefHeight="64.0" prefWidth="560.0" promptText="Upprepa lösenord" styleClass="form-input" />
             <Button layoutX="896.0" layoutY="844.0" mnemonicParsing="false" onAction="#completeSignUpOne" styleClass="green-button" text="Nästa" />
             <Button layoutX="1137.0" layoutY="980.0" mnemonicParsing="false" onAction="#goToLogin" styleClass="text-button" text="här" />
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
             <Text layoutX="953.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
             <Text layoutX="1244.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
             <Text layoutX="1249.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
@@ -107,16 +92,6 @@
       <AnchorPane fx:id="signupThree" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-<<<<<<< HEAD
-            <Button layoutX="898.0" layoutY="568.0" mnemonicParsing="false" onAction="#completeSignUpThree" styleClass="green-button" text="Nästa" />
-            <TextField fx:id="cardholderNameInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="313.0" prefHeight="64.0" prefWidth="560.0" promptText="Namn på kort" styleClass="form-input" />
-            <TextField fx:id="cardNumberInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="393.0" prefHeight="64.0" prefWidth="560.0" promptText="Kortnummer" styleClass="form-input" />
-            <TextField fx:id="cardExpireMonthInput" accessibleRoleDescription="rd" layoutX="681.0" layoutY="473.0" prefHeight="64.0" prefWidth="176.0" promptText="MM" styleClass="form-input" />
-            <TextField fx:id="cardExpireYearInput" accessibleRoleDescription="rd" layoutX="873.0" layoutY="473.0" prefHeight="64.0" prefWidth="176.0" promptText="ÅÅ" styleClass="form-input" />
-            <TextField fx:id="cvvInput" accessibleRoleDescription="rd" layoutX="1065.0" layoutY="473.0" prefHeight="64.0" prefWidth="176.0" promptText="CVV" styleClass="form-input" />
-            <Label layoutX="733.0" layoutY="760.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
-            <Button layoutX="1143.0" layoutY="760.0" mnemonicParsing="false" onAction="#goToLogin" styleClass="text-button" text="här" />
-=======
             <TextField fx:id="cardholderNameInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="313.0" onAction="#completeSignUpThree" prefHeight="64.0" prefWidth="560.0" promptText="Namn på kort" styleClass="form-input" />
             <TextField fx:id="cardNumberInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="393.0" onAction="#completeSignUpThree" prefHeight="64.0" prefWidth="560.0" promptText="Kortnummer" styleClass="form-input" />
             <TextField fx:id="cardExpireMonthInput" accessibleRoleDescription="rd" layoutX="681.0" layoutY="473.0" onAction="#completeSignUpThree" prefHeight="64.0" prefWidth="176.0" promptText="MM" styleClass="form-input" />
@@ -125,7 +100,6 @@
             <Button layoutX="898.0" layoutY="568.0" mnemonicParsing="false" onAction="#completeSignUpThree" styleClass="green-button" text="Nästa" />
             <Button layoutX="1143.0" layoutY="760.0" mnemonicParsing="false" onAction="#goToLogin" styleClass="text-button" text="här" />
             <Label layoutX="733.0" layoutY="760.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
             <AnchorPane layoutX="335.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1250.0" stylesheets="@../../../imat.css">
                <children>
                   <Label layoutY="67.0" styleClass="progress-label" text="Personuppgifter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
@@ -619,36 +593,17 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time">
                                        <children>
-<<<<<<< HEAD
                                           <ToggleButton mnemonicParsing="false" text="8:00-9:59" toggleGroup="$time" />
-=======
-                                          <ToggleButton mnemonicParsing="false" text="8:00-9:59">
-                                             <toggleGroup>
-                                                <ToggleGroup fx:id="time1" />
-                                             </toggleGroup>
-                                          </ToggleButton>
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.rowIndex="1">
                                        <children>
-<<<<<<< HEAD
                                           <ToggleButton mnemonicParsing="false" text="14:00-15:59" toggleGroup="$time" />
-=======
-                                          <ToggleButton mnemonicParsing="false" text="14:00-15:59" toggleGroup="$time1">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor></ToggleButton>
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1">
                                        <children>
-<<<<<<< HEAD
                                           <ToggleButton mnemonicParsing="false" text="10:00-11:59" toggleGroup="$time" />
-=======
-                                          <ToggleButton mnemonicParsing="false" text="10:00-11:59" toggleGroup="$time1" />
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -693,15 +648,7 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time">
                                        <children>
-<<<<<<< HEAD
                                           <ToggleButton mnemonicParsing="false" text="8:00-9:59" toggleGroup="$time" />
-=======
-                                          <ToggleButton mnemonicParsing="false" text="8:00-9:59">
-                                             <toggleGroup>
-                                                <ToggleGroup fx:id="time2" />
-                                             </toggleGroup>
-                                          </ToggleButton>
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.rowIndex="1">
@@ -711,11 +658,7 @@
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1">
                                        <children>
-<<<<<<< HEAD
                                           <ToggleButton mnemonicParsing="false" text="10:00-11:59" toggleGroup="$time" />
-=======
-                                          <ToggleButton mnemonicParsing="false" text="10:00-11:59" toggleGroup="$time2" />
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -760,15 +703,7 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time">
                                        <children>
-<<<<<<< HEAD
                                           <ToggleButton mnemonicParsing="false" text="8:00-9:59" toggleGroup="$time" />
-=======
-                                          <ToggleButton mnemonicParsing="false" text="8:00-9:59">
-                                             <toggleGroup>
-                                                <ToggleGroup fx:id="time3" />
-                                             </toggleGroup>
-                                          </ToggleButton>
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.rowIndex="1">
@@ -778,11 +713,7 @@
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1">
                                        <children>
-<<<<<<< HEAD
                                           <ToggleButton mnemonicParsing="false" text="10:00-11:59" toggleGroup="$time" />
-=======
-                                          <ToggleButton mnemonicParsing="false" text="10:00-11:59" toggleGroup="$time3" />
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -827,15 +758,7 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time">
                                        <children>
-<<<<<<< HEAD
                                           <ToggleButton mnemonicParsing="false" text="8:00-9:59" toggleGroup="$time" />
-=======
-                                          <ToggleButton mnemonicParsing="false" text="8:00-9:59">
-                                             <toggleGroup>
-                                                <ToggleGroup fx:id="time4" />
-                                             </toggleGroup>
-                                          </ToggleButton>
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.rowIndex="1">
@@ -845,11 +768,7 @@
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1">
                                        <children>
-<<<<<<< HEAD
                                           <ToggleButton mnemonicParsing="false" text="10:00-11:59" toggleGroup="$time" />
-=======
-                                          <ToggleButton mnemonicParsing="false" text="10:00-11:59" toggleGroup="$time4" />
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -894,15 +813,7 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time">
                                        <children>
-<<<<<<< HEAD
                                           <ToggleButton mnemonicParsing="false" text="8:00-9:59" toggleGroup="$time" />
-=======
-                                          <ToggleButton mnemonicParsing="false" text="8:00-9:59">
-                                             <toggleGroup>
-                                                <ToggleGroup fx:id="time5" />
-                                             </toggleGroup>
-                                          </ToggleButton>
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.rowIndex="1">
@@ -912,11 +823,7 @@
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1">
                                        <children>
-<<<<<<< HEAD
                                           <ToggleButton mnemonicParsing="false" text="10:00-11:59" toggleGroup="$time" />
-=======
-                                          <ToggleButton mnemonicParsing="false" text="10:00-11:59" toggleGroup="$time5" />
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -961,15 +868,7 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time">
                                        <children>
-<<<<<<< HEAD
                                           <ToggleButton mnemonicParsing="false" text="8:00-9:59" toggleGroup="$time" />
-=======
-                                          <ToggleButton mnemonicParsing="false" text="8:00-9:59">
-                                             <toggleGroup>
-                                                <ToggleGroup fx:id="time6" />
-                                             </toggleGroup>
-                                          </ToggleButton>
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.rowIndex="1">
@@ -979,11 +878,7 @@
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1">
                                        <children>
-<<<<<<< HEAD
                                           <ToggleButton mnemonicParsing="false" text="10:00-11:59" toggleGroup="$time" />
-=======
-                                          <ToggleButton mnemonicParsing="false" text="10:00-11:59" toggleGroup="$time6" />
->>>>>>> c88ed444734b62dee5b3aee3e5dbadf95118edf7
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1" GridPane.rowIndex="1">
