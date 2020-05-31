@@ -434,7 +434,7 @@ public class iMatController implements Initializable {
 
 	@FXML
 	public void changePersonalInfo() {
-		
+
 	}
 
 	@FXML
