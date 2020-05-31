@@ -705,10 +705,10 @@ public class iMatController implements Initializable {
 		activeObject = newActive;
 	}
 
-	public void populateProductDetailView(ShoppingItem item) {
+	public void populateProductDetailView(ShoppingItem item, int specialPrice) {
 		System.out.println("1");
 		cartOrWindowStatus = true;
-		ProductWindow w = new ProductWindow(item, this);
+		ProductWindow w = new ProductWindow(item, this, specialPrice);
 		window.getChildren().add(w);
 		w.toFront();
 	}
@@ -883,9 +883,20 @@ public class iMatController implements Initializable {
 		goToStart();
 	}
 
+	public double getPrice(double product, double specialPric) {
+		double x = product * (1 - (specialPric / 100));
+		x = x * 100;
+		x = (int) x;
+		x = x / 100;
+		return x;
+	}
+
 	public static void getDefaultPrice(Product p) {
 		p.setPrice(startPrice.get(p));
+	}
 
+	public static double getDefaultPriceWindow(Product p) {
+		return startPrice.get(p);
 	}
 
 	public static void addDefaultPrice(Product p) {

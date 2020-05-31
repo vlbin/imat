@@ -118,6 +118,7 @@
                                           <Font size="28.0" />
                                        </font>
                                     </Text>
+                              <Rectangle fill="WHITE" height="60.0" layoutY="360.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="690.0" />
                            </children>
                         </AnchorPane>
                   </content>
@@ -149,13 +150,17 @@
                </cursor>
             </TabPane>
                   <ImageView fx:id="imageProduct" fitHeight="260.0" fitWidth="340.0" layoutX="230.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" />
-                  <Rectangle fill="#f03e3e" height="60.0" layoutX="430.0" layoutY="566.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="140.0" />
-                  <Rectangle fill="#fab005" height="60.0" layoutX="425.0" layoutY="561.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="140.0" />
-                  <Text fx:id="specialPriceProduct" fill="WHITE" layoutX="430.0" layoutY="602.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="bestPrice" text="Text" textAlignment="CENTER" wrappingWidth="140.0">
-                     <font>
-                        <Font name="Arial Narrow" size="28.0" />
-                     </font>
-                  </Text>
+            <Group fx:id="SpecialpriceBackground" layoutX="430.0" layoutY="566.0">
+               <children>
+                        <Rectangle fill="#f03e3e" height="60.0" layoutX="5.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="140.0" />
+                        <Rectangle fill="#fab005" height="60.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="140.0" />
+                        <Text fx:id="specialPriceProduct" fill="WHITE" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="bestPrice" text="Text" textAlignment="CENTER" wrappingWidth="140.0">
+                           <font>
+                              <Font name="Arial Narrow" size="28.0" />
+                           </font>
+                        </Text>
+               </children>
+            </Group>
             <TextField fx:id="amountProduct" alignment="CENTER" layoutX="790.0" layoutY="180.0" onAction="#changedText" prefHeight="81.0" prefWidth="168.0" styleClass="boughtProduct" text="0" />
             <Button fx:id="buttonHigher" layoutX="958.0" layoutY="180.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#addThisItem" onMouseEntered="#hoverHigherColor" onMouseExited="#outsideHigherColor" onMousePressed="#pressedHigherColor" prefHeight="80.0" prefWidth="80.0" styleClass="higherButton">
                <graphic>
@@ -175,6 +180,7 @@
             <Text fx:id="nameProduct" layoutX="230.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nameProduct" text="Text" textAlignment="RIGHT" wrappingWidth="340.0" />
             <Text fx:id="numberProduct" layoutX="230.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="amountProduct" text="Text" textAlignment="RIGHT" wrappingWidth="340.0" />
             <Text fx:id="priceProduct" layoutX="230.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="priceProduct" text="Text" textAlignment="RIGHT" wrappingWidth="340.0" />
+            <Text fx:id="pricespecial" fill="#ab2121" layoutX="280.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="priceProduct" text="Text" />
          </children>
       </AnchorPane>
          </children>
