@@ -125,7 +125,7 @@ public class CartPanel extends AnchorPane {
 				changeText();
 				cartBought.positionCaret(i);
 			}
-
+			outsideHigherColor();
 		}
 
 	}
