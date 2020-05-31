@@ -29,9 +29,59 @@
 
 <AnchorPane id="AnchorPane" fx:id="window" maxHeight="1080.0" maxWidth="1920.0" minHeight="1080.0" minWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMatController">
    <children>
+      <AnchorPane fx:id="loginScreen" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="862.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Logga in" textAlignment="CENTER" />
+            <Button layoutX="881.0" layoutY="627.0" mnemonicParsing="false" onAction="#handleLogin" styleClass="green-button" text="Logga in" />
+            <TextField fx:id="loginEmailInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="401.0" prefHeight="64.0" prefWidth="560.0" promptText="E-postadress" styleClass="form-input" />
+            <PasswordField fx:id="loginPasswordInput" layoutX="680.0" layoutY="480.0" prefHeight="64.0" prefWidth="560.0" promptText="Lösenord" styleClass="form-input" />
+            <Label layoutX="778.0" layoutY="697.0" styleClass="form-text" text="Glömt lösenord? Klicka" />
+            <Button layoutX="1087.0" layoutY="697.0" mnemonicParsing="false" styleClass="text-button" text="här" />
+            <Label layoutX="803.0" layoutY="968.0" styleClass="form-text" text="Inget konto? Klicka" />
+            <Button layoutX="1061.0" layoutY="968.0" mnemonicParsing="false" onAction="#goToSignUp" styleClass="text-button" text="här" />
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" />
+            <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
+            <Text fx:id="errorLoginText" layoutX="685.0" layoutY="587.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-text" text="Fel kombination av användarnamn och lösenord!" visible="false" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="returningOrNew" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css">
+         <children>
+            <Text layoutX="592.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Har du handlat på iMat tidigare?" textAlignment="CENTER" />
+            <Button fx:id="returningCustomerButton" layoutX="704.0" layoutY="405.0" mnemonicParsing="false" onAction="#returningCustomerClicked" styleClass="green-button" text="Ja, fortsätt" />
+            <Button fx:id="newCustomerButton" layoutX="932.0" layoutY="404.0" mnemonicParsing="false" onAction="#newCustomerClicked" styleClass="blank-button" text="Nej, skapa konto" />
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="orderConfirmationScreen" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../../../imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Button layoutX="931.0" layoutY="702.0" mnemonicParsing="false" onAction="#goToStart" styleClass="green-button" text="Till startsidan" />
+            <Text layoutX="931.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Din order är på väg!" />
+            <Text layoutX="931.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-text" text="Leveranstid:" />
+            <ImageView fitHeight="420.0" fitWidth="427.0" layoutX="434.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/undraw_on_the_way_ldaq.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="dateText" layoutX="931.0" layoutY="564.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18/5">
+               <styleClass>
+                  <String fx:value="form-text" />
+                  <String fx:value="bold" />
+               </styleClass>
+            </Text>
+            <Text fx:id="timeText" layoutX="931.0" layoutY="611.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8:00-9:00">
+               <styleClass>
+                  <String fx:value="form-text" />
+                  <String fx:value="bold" />
+               </styleClass>
+            </Text>
+            <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="signupThree" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <Button layoutX="898.0" layoutY="568.0" mnemonicParsing="false" onAction="#completeSignUpThree" styleClass="green-button" text="Nästa" />
             <TextField fx:id="cardholderNameInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="313.0" prefHeight="64.0" prefWidth="560.0" promptText="Namn på kort" styleClass="form-input" />
             <TextField fx:id="cardNumberInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="393.0" prefHeight="64.0" prefWidth="560.0" promptText="Kortnummer" styleClass="form-input" />
@@ -40,11 +90,11 @@
             <TextField fx:id="cvvInput" accessibleRoleDescription="rd" layoutX="1065.0" layoutY="473.0" prefHeight="64.0" prefWidth="176.0" promptText="CVV" styleClass="form-input" />
             <Label layoutX="733.0" layoutY="756.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
             <Button layoutX="1143.0" layoutY="756.0" mnemonicParsing="false" onAction="#goToLogin" styleClass="text-button" text="här" />
-            <AnchorPane layoutX="341.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1238.0" stylesheets="@../../../imat.css">
+            <AnchorPane layoutX="335.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1250.0" stylesheets="@../../../imat.css">
                <children>
                   <Label layoutY="67.0" styleClass="progress-label" text="Personuppgifter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
                   <Label layoutX="493.0" layoutY="68.0" styleClass="progress-label" text="Leveransinformation" AnchorPane.bottomAnchor="0.0" />
-                  <Label layoutX="1025.0" layoutY="68.0" text="Betalningsinformation" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <Label layoutX="1025.0" layoutY="80.0" text="Betalningsinformation" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <styleClass>
                         <String fx:value="progress-label" />
                         <String fx:value="active" />
@@ -101,7 +151,7 @@
             <Text layoutX="1052.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
             <Text layoutX="861.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
             <Label layoutX="741.0" layoutY="699.0" styleClass="text-small" text="Obligatoriska fält markeras med" />
-            <Text layoutX="48.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
+            <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
             <Text layoutX="1168.0" layoutY="726.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
          </children>
       </AnchorPane>
@@ -203,7 +253,7 @@
                      </children>
                   </AnchorPane>
                </children></StackPane>
-            <Label alignment="CENTER" layoutX="851.0" layoutY="16.0" prefHeight="68.0" prefWidth="218.0" styleClass="mypages-header" text="Mina Sidor" textAlignment="CENTER">
+            <Label alignment="CENTER" layoutX="851.0" prefHeight="100.0" prefWidth="220.0" styleClass="mypages-header" text="Mina Sidor" textAlignment="CENTER">
                <font>
                   <Font size="32.0" />
                </font>
@@ -238,7 +288,7 @@
                   </Label>
                </children>
             </Pane>
-            <Text layoutX="35.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
+            <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
             <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="205.0" minHeight="-Infinity" minWidth="100.0" onMouseClicked="#openCart" prefHeight="64.0" prefWidth="205.0" styleClass="cartButton" stylesheets="@imat.css" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0">
                <children>
                   <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="20.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
@@ -253,15 +303,15 @@
       </AnchorPane>
       <AnchorPane fx:id="signupOne" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Text layoutX="27.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
+                  <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
                </children>
             </AnchorPane>
             <Button layoutX="896.0" layoutY="844.0" mnemonicParsing="false" onAction="#completeSignUpOne" styleClass="green-button" text="Nästa" />
             <Label layoutX="731.0" layoutY="969.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
             <Button layoutX="1137.0" layoutY="969.0" mnemonicParsing="false" onAction="#goToLogin" styleClass="text-button" text="här" />
-            <AnchorPane layoutX="341.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1238.0" stylesheets="@../../../imat.css">
+            <AnchorPane layoutX="335.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1250.0" stylesheets="@../../../imat.css">
                <children>
                   <Label layoutY="67.0" text="Personuppgifter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
                      <styleClass>
@@ -308,9 +358,9 @@
             <Text layoutX="1169.0" layoutY="951.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="signupTwo" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="signupTwo" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#goToStart" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Text layoutX="48.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
                </children>
@@ -318,7 +368,7 @@
             <Button layoutX="898.0" layoutY="560.0" mnemonicParsing="false" onAction="#completeSignUpTwo" styleClass="green-button" text="Nästa" />
             <Label layoutX="733.0" layoutY="697.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
             <Button layoutX="1140.0" layoutY="697.0" mnemonicParsing="false" onAction="#goToLogin" styleClass="text-button" text="här" />
-            <AnchorPane layoutX="341.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1238.0" stylesheets="@../../../imat.css">
+            <AnchorPane layoutX="335.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1250.0" stylesheets="@../../../imat.css">
                <children>
                   <Label layoutY="67.0" styleClass="progress-label" text="Personuppgifter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
                   <Label layoutX="493.0" layoutY="68.0" text="Leveransinformation" AnchorPane.bottomAnchor="0.0">
@@ -354,13 +404,13 @@
                         <String fx:value="active" />
                      </styleClass>
                   </Label>
-                  <Label layoutX="612.0" layoutY="6.0" text="2">
+                  <Label layoutX="610.0" layoutY="6.0" text="2">
                      <styleClass>
                         <String fx:value="progress-number" />
                         <String fx:value="active" />
                      </styleClass>
                   </Label>
-                  <Label layoutX="1112.0" layoutY="6.0" styleClass="progress-number" text="3" />
+                  <Label layoutX="1110.0" layoutY="6.0" styleClass="progress-number" text="3" />
                </children>
             </AnchorPane>
             <TextField fx:id="addressInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="313.0" prefHeight="64.0" prefWidth="560.0" promptText="Adress" styleClass="form-input" />
@@ -377,9 +427,9 @@
       <AnchorPane fx:id="deliveryScreen" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="delivery-screen" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Button layoutX="878.0" layoutY="875.0" mnemonicParsing="false" onAction="#placeOrder" styleClass="green-button" text="Fortsätt" />
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Text layoutX="48.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
+                  <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
                </children>
             </AnchorPane>
             <Text layoutX="786.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Välj leveranstid" />
@@ -402,7 +452,7 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-12:59">
+                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-9:59">
                                              <toggleGroup>
                                                 <ToggleGroup fx:id="time" />
                                              </toggleGroup>
@@ -411,22 +461,22 @@
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.rowIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="14:00-15:59" toggleGroup="$time" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" selected="true" text="10:00-11:59" toggleGroup="$time" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="16:00-17:59" toggleGroup="$time" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="2">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="12:00-13:59" toggleGroup="$time" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -435,7 +485,7 @@
                                           <String fx:value="active" />
                                        </styleClass>
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="18:00-19:59" toggleGroup="$time" />
                                        </children>
                                     </Pane>
                                  </children>
@@ -831,33 +881,9 @@
             </TabPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="loginScreen" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Text layoutX="862.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Logga in" textAlignment="CENTER" />
-            <Button layoutX="881.0" layoutY="627.0" mnemonicParsing="false" onAction="#handleLogin" styleClass="green-button" text="Logga in" />
-            <TextField fx:id="loginEmailInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="401.0" prefHeight="64.0" prefWidth="560.0" promptText="E-postadress" styleClass="form-input" />
-            <PasswordField fx:id="loginPasswordInput" layoutX="680.0" layoutY="480.0" prefHeight="64.0" prefWidth="560.0" promptText="Lösenord" styleClass="form-input" />
-            <Label layoutX="778.0" layoutY="697.0" styleClass="form-text" text="Glömt lösenord? Klicka" />
-            <Button layoutX="1087.0" layoutY="697.0" mnemonicParsing="false" styleClass="text-button" text="här" />
-            <Label layoutX="803.0" layoutY="968.0" styleClass="form-text" text="Inget konto? Klicka" />
-            <Button layoutX="1061.0" layoutY="968.0" mnemonicParsing="false" onAction="#goToSignUp" styleClass="text-button" text="här" />
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" />
-            <Text layoutX="48.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
-            <Text fx:id="errorLoginText" layoutX="685.0" layoutY="587.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-text" text="Fel kombination av användarnamn och lösenord!" visible="false" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="returningOrNew" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css">
-         <children>
-            <Text layoutX="592.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Har du handlat på iMat tidigare?" textAlignment="CENTER" />
-            <Button fx:id="returningCustomerButton" layoutX="704.0" layoutY="405.0" mnemonicParsing="false" onAction="#returningCustomerClicked" styleClass="green-button" text="Ja, fortsätt" />
-            <Button fx:id="newCustomerButton" layoutX="932.0" layoutY="404.0" mnemonicParsing="false" onAction="#newCustomerClicked" styleClass="blank-button" text="Nej, skapa konto" />
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Text layoutX="48.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="signupComplete" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <Button layoutX="931.0" layoutY="568.0" mnemonicParsing="false" onAction="#goToDelivery" styleClass="green-button" text="Fortsätt" />
             <Text layoutX="931.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Ditt konto är nu skapat!" />
             <Text layoutX="931.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-text" text="Tack för att du väljet iMat!" />
@@ -866,52 +892,13 @@
                   <Image url="@../resources/undraw_gone_shopping_vwmc (1).png" />
                </image></ImageView>
             <javafx.scene.layout.VBox layoutX="27.0" layoutY="126.0" />
-            <Text layoutX="48.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="orderConfirmationScreen" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../../../imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Button layoutX="931.0" layoutY="702.0" mnemonicParsing="false" onAction="#goToStart" styleClass="green-button" text="Till startsidan" />
-            <Text layoutX="931.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Din order är på väg!" />
-            <Text layoutX="931.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-text" text="Leveranstid:" />
-            <ImageView fitHeight="420.0" fitWidth="427.0" layoutX="434.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/undraw_on_the_way_ldaq.png" />
-               </image>
-            </ImageView>
-            <Text fx:id="dateText" layoutX="931.0" layoutY="564.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18/5">
-               <styleClass>
-                  <String fx:value="form-text" />
-                  <String fx:value="bold" />
-               </styleClass>
-            </Text>
-            <Text fx:id="timeText" layoutX="931.0" layoutY="611.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8:00-9:00">
-               <styleClass>
-                  <String fx:value="form-text" />
-                  <String fx:value="bold" />
-               </styleClass>
-            </Text>
-            <Text layoutX="48.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
+            <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="startScreen" maxHeight="1080.0" maxWidth="1920.0" minHeight="1080.0" minWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0">
          <children>
-            <Rectangle fill="#fab005" height="93.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="navbar" width="1920.0" />
-            <Text fill="WHITE" layoutX="32.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="navbar-text" text="iMat">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Text>
-            <TextField fx:id="searchInput" layoutX="600.0" layoutY="15.0" onAction="#searchAction" prefHeight="62.0" prefWidth="720.0" promptText="Skriv för att börja söka" styleClass="searchBar" />
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1262.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/img_487196.png" />
-               </image>
-            </ImageView>
-            <Rectangle fill="WHITE" height="987.0" layoutY="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="350.0" />
-            <Rectangle fill="#e9ecef" height="987.0" layoutX="350.0" layoutY="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1570.0" />
-            <ScrollPane fx:id="scrollProducts" layoutX="350.0" layoutY="93.0" prefHeight="987.0" prefWidth="1570.0" styleClass="scrollPane">
+            <Rectangle fill="WHITE" height="980.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="350.0" />
+            <ScrollPane fx:id="scrollProducts" layoutX="350.0" layoutY="100.0" prefHeight="980.0" prefWidth="1570.0" styleClass="scrollPane">
                <content>
                   <FlowPane fx:id="ProductItems1" prefHeight="987.0" prefWidth="1570.0" styleClass="flowPaneColor">
                      <children>
@@ -947,8 +934,20 @@
                   </FlowPane>
                </content>
             </ScrollPane>
-            <FlowPane fx:id="menuBar" layoutY="93.0" maxHeight="987.0" maxWidth="350.0" minHeight="987.0" minWidth="350.0" prefHeight="987.0" prefWidth="350.0" />
-            <Button fx:id="navbarLogin" layoutX="1530.0" layoutY="18.0" mnemonicParsing="false" onAction="#navbarLoginClicked" styleClass="navbar-link" text="Logga in" AnchorPane.rightAnchor="232.0" AnchorPane.topAnchor="18.0" />
+            <FlowPane fx:id="menuBar" layoutY="100.0" maxHeight="987.0" maxWidth="350.0" minHeight="980.0" minWidth="350.0" prefHeight="987.0" prefWidth="350.0" />
+            <Rectangle fill="#fab005" height="100.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="navbar" width="1920.0" />
+            <TextField fx:id="searchInput" layoutX="600.0" layoutY="19.0" onAction="#searchAction" prefHeight="62.0" prefWidth="720.0" promptText="Skriv för att börja söka" styleClass="searchBar" />
+            <Button fx:id="navbarLogin" layoutX="1530.0" layoutY="20.0" mnemonicParsing="false" onAction="#navbarLoginClicked" styleClass="navbar-link" text="Logga in" AnchorPane.rightAnchor="232.0" AnchorPane.topAnchor="20.0" />
+            <Text fill="WHITE" layoutX="48.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="navbar-text" text="iMat">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1262.0" layoutY="31.0" onMouseClicked="#searchAction" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../resources/img_487196.png" />
+               </image>
+            </ImageView>
             <AnchorPane maxHeight="-Infinity" maxWidth="205.0" minHeight="-Infinity" minWidth="100.0" onMouseClicked="#openCart" prefHeight="64.0" prefWidth="205.0" styleClass="cartButton" stylesheets="@imat.css" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0">
                <children>
                   <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="20.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
@@ -956,7 +955,7 @@
                         <Image url="@../resources/cart.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="cartTotal" layoutX="69.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-small" text="0 kr" wrappingWidth="122.0" />
+                  <Text fx:id="cartTotal" layoutX="69.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-small" text="0 kr" wrappingWidth="124.0" />
                </children>
             </AnchorPane>
          </children>

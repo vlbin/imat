@@ -31,7 +31,8 @@ public class CartPanel extends AnchorPane {
 	private TextField cartBought;
 	@FXML
 	private Button buttonLower;
-	@FXML private ImageView clearFromCart;
+	@FXML
+	private ImageView clearFromCart;
 	private iMatController parentController;
 	private ShoppingItem item;
 
@@ -52,31 +53,29 @@ public class CartPanel extends AnchorPane {
 		}
 		lblKundvagnVara.setText(sb.toString());
 		if (item.getProduct().isEcological()) {
-			//lblKundvagnEko.setText("Eko");
+			// lblKundvagnEko.setText("Eko");
 		}
 		this.item = item;
 		priceAll.setText(parentController.roundPrice(item.getTotal(), 2));
-		addTextLimiter(cartBought, 3);
+		addTextLimiter(cartBought, 2);
 		changeText();
 		outsideColor();
 	}
 
 	@FXML
 	protected void deleteItem() {
-		((FlowPane)this.getParent()).getChildren().remove(this);
+		((FlowPane) this.getParent()).getChildren().remove(this);
 		parentController.clearItemFromCart(item);
 	}
 
 	@FXML
 	public void clearButtonMouseEntered() {
-		clearFromCart.setImage(
-				new Image(getClass().getClassLoader().getResourceAsStream("resources/trash-1.png")));
+		clearFromCart.setImage(new Image(getClass().getClassLoader().getResourceAsStream("resources/trash-1.png")));
 	}
 
 	@FXML
 	public void clearButtonMousePressed() {
-		clearFromCart
-				.setImage(new Image(getClass().getClassLoader().getResourceAsStream("resources/trash-2.png")));
+		clearFromCart.setImage(new Image(getClass().getClassLoader().getResourceAsStream("resources/trash-2.png")));
 	}
 
 	@FXML
@@ -99,7 +98,7 @@ public class CartPanel extends AnchorPane {
 		hoverColor();
 		event.consume();
 		if (zero()) {
-			((FlowPane)this.getParent()).getChildren().remove(this);
+			((FlowPane) this.getParent()).getChildren().remove(this);
 		}
 	}
 

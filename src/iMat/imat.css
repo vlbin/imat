@@ -305,7 +305,6 @@ AnchorPane {
 
 .higherButton{
     -fx-background-color: #0dbb29;
-    -fx-cursor: hand;
     -fx-border-radius: 0.0;
     -fx-background-radius: 0.0;
     -fx-border: 0.0;

@@ -50,10 +50,14 @@ public class Cart extends AnchorPane {
 			throw new RuntimeException(exception);
 		}
 		scrpane.setHbarPolicy(ScrollBarPolicy.NEVER);
+		if (list.size() < 7) {
+			scrpane.setVbarPolicy(ScrollBarPolicy.NEVER);
+		}
 		this.parentController = parentController;
 		for (ShoppingItem item : list) {
 			if (item.getAmount() > 0) {
-				CartPanel cPanel = new CartPanel(parentController, item, parentController.getImage(item.getProduct(), 80, 80));
+				CartPanel cPanel = new CartPanel(parentController, item,
+						parentController.getImage(item.getProduct(), 80, 80));
 				flowPaneItems.getChildren().add(cPanel);
 			} else {
 				parentController.clearItemFromCart(item);
@@ -66,8 +70,8 @@ public class Cart extends AnchorPane {
 	}
 
 	public void updateCartPrice() {
-
-		totalPriceCart.setText(parentController.roundPrice((IMatDataHandler.getInstance()).getShoppingCart().getTotal(), 2) + " kr");
+		totalPriceCart.setText(
+				parentController.roundPrice((IMatDataHandler.getInstance()).getShoppingCart().getTotal(), 2) + " kr");
 	}
 
 	@FXML
@@ -77,14 +81,13 @@ public class Cart extends AnchorPane {
 
 	@FXML
 	public void closeButtonMouseEntered() {
-		closeProduct.setImage(
-				new Image(getClass().getClassLoader().getResourceAsStream("resources/Group 1_darkred.png")));
+		closeProduct
+				.setImage(new Image(getClass().getClassLoader().getResourceAsStream("resources/Group 1_darkred.png")));
 	}
 
 	@FXML
 	public void closeButtonMousePressed() {
-		closeProduct
-				.setImage(new Image(getClass().getClassLoader().getResourceAsStream("resources/Group 1_red.png")));
+		closeProduct.setImage(new Image(getClass().getClassLoader().getResourceAsStream("resources/Group 1_red.png")));
 	}
 
 	@FXML
@@ -98,7 +101,7 @@ public class Cart extends AnchorPane {
 	}
 
 	@FXML
-	public void mouseTrap(Event event){
+	public void mouseTrap(Event event) {
 		event.consume();
 	}
 }
