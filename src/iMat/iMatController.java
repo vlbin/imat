@@ -120,6 +120,9 @@ public class iMatController implements Initializable {
 	@FXML
 	private Text cartTotal;
 
+	@FXML
+	private Text cartTotalMyPages;
+
 	/* SIGNUP TWO */
 	@FXML
 	private TextField addressInput;
@@ -865,6 +868,7 @@ public class iMatController implements Initializable {
 			k.updateCartPrice();
 		}
 		cartTotal.setText(roundPrice(dataHandler.getShoppingCart().getTotal(), 2) + " kr");
+		cartTotalMyPages.setText(roundPrice(dataHandler.getShoppingCart().getTotal(), 2) + " kr");
 		dataHandler.getShoppingCart().fireShoppingCartChanged(item, true);
 	}
 

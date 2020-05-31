@@ -185,7 +185,7 @@
                         <Image url="@../resources/cart.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="cartTotal1" layoutX="69.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-small" text="0 kr" wrappingWidth="125.0" />
+                  <Text fx:id="cartTotalMyPages" layoutX="69.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-small" text="0 kr" wrappingWidth="125.0" />
                </children>
             </AnchorPane>
          </children>
