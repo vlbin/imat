@@ -7,6 +7,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -40,10 +41,16 @@ public class ProductWindow extends AnchorPane {
 	private Button buttonLower;
 	@FXML
 	private Button buttonHigher;
+	@FXML
+	private Text pricespecial;
+	@FXML
+	private Group SpecialpriceBackground;
 	private iMatController parentController;
 	private ShoppingItem item;
+	private int specialPric;
 
-	public ProductWindow(ShoppingItem item, iMatController parentController) {
+	public ProductWindow(ShoppingItem item, iMatController parentController, int specialPric) {
+		this.specialPric = specialPric;
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ProductWindow.fxml"));
 		fxmlLoader.setRoot(this);
 		fxmlLoader.setController(this);
@@ -54,13 +61,29 @@ public class ProductWindow extends AnchorPane {
 			throw new RuntimeException(exception);
 		}
 
-		specialPriceProduct.setText("50% rabatt");
-		specialPriceProduct.setStyle("-fx-font-family: \"Bebas Neue\";");
+		if (specialPric == 0) {
+			priceProduct.setText(Double.toString(item.getProduct().getPrice()) + " kr");
+			pricespecial.setVisible(false);
+			SpecialpriceBackground.setVisible(false);
+			pricespecial.setVisible(false);
+		} else {
+			priceProduct.setText(Double.toString(iMatController.getDefaultPriceWindow(item.getProduct())) + " kr");
+			//iMatController.addDefaultPrice(item.getProduct());
+			specialPriceProduct.setText(Integer.toString(specialPric) + "% rabatt");
+			specialPriceProduct.setStyle("-fx-font-family: \"Bebas Neue\";");
+			priceProduct.setStrikethrough(true);
+			double sum = parentController.getPrice(iMatController.getDefaultPriceWindow(item.getProduct()), specialPric);
+			item.getProduct().setPrice(sum);
+			pricespecial.setText(sum + " kr");
+		}
+
+		// specialPriceProduct.setText("50% rabatt");
+		// specialPriceProduct.setStyle("-fx-font-family: \"Bebas Neue\";");
 		this.item = item;
 		this.parentController = parentController;
 		nameProduct.setText(item.getProduct().getName());
 		numberProduct.setText(parentController.getCategoryFromItem(item).getName());
-		priceProduct.setText(Double.toString(item.getProduct().getPrice()) + " kr");
+		// priceProduct.setText(Double.toString(item.getProduct().getPrice()) + " kr");
 		Image image = parentController.getImage(item.getProduct(), 340, 260);
 		imageProduct.setImage(image);
 		addTextLimiter(amountProduct, 2);
@@ -129,6 +152,9 @@ public class ProductWindow extends AnchorPane {
 
 	@FXML
 	public void closeProductView(Event event) {
+		if (specialPric != 0) {
+			iMatController.getDefaultPrice(item.getProduct());
+		}
 		parentController.removeProductWindow(this);
 	}
 

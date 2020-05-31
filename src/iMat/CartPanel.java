@@ -58,7 +58,7 @@ public class CartPanel extends AnchorPane {
 			// lblKundvagnEko.setText("Eko");
 		}
 		this.item = item;
-		priceAll.setText(parentController.roundPrice(item.getTotal(), 2));
+		priceAll.setText(iMatController.roundPrice(item.getTotal(), 2));
 		addTextLimiter(cartBought, 2);
 		changeText();
 		outsideLowerColor();

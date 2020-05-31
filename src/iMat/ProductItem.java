@@ -40,9 +40,11 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 	private Text pricespecial;
 	private iMatController parentController;
 	private ShoppingItem item;
+	private int specialPric;
 
 	public ProductItem(ShoppingItem item, iMatController parentController, int specialPric) {
 		this.item = item;
+		this.specialPric = specialPric;
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ProductItem.fxml"));
 		fxmlLoader.setRoot(this);
 		fxmlLoader.setController(this);
@@ -86,7 +88,7 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 
 	@FXML
 	protected void onClick(Event event) {
-		parentController.populateProductDetailView(item);
+		parentController.populateProductDetailView(item, specialPric);
 	}
 
 	public void changeText() {
