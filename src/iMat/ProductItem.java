@@ -68,8 +68,8 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 
 		}
 		StringBuilder sb = new StringBuilder(item.getProduct().getName());
-		if (sb.length() > 17) {
-			sb.replace(14, sb.length(), "...");
+		if (sb.length() > 15) {
+			sb.replace(12, sb.length(), "...");
 		}
 		productName.setText(sb.toString());
 

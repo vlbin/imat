@@ -70,6 +70,11 @@ public class Cart extends AnchorPane {
 	}
 
 	public void updateCartPrice() {
+		if ((IMatDataHandler.getInstance()).getShoppingCart().getTotal() == 0) {
+			btnKassa.setDisable(true);
+		} else {
+			btnKassa.setDisable(false);
+		}
 		totalPriceCart.setText(
 				iMatController.roundPrice((IMatDataHandler.getInstance()).getShoppingCart().getTotal(), 2) + " kr");
 	}

@@ -178,9 +178,9 @@ public class iMatController implements Initializable {
 	@FXML
 	private Label order_header;
 	@FXML
-	private Label epostadress;
+	private TextField epostadress;
 	@FXML
-	private Label homeadress;
+	private TextField homeadress;
 	@FXML
 	private Label creditcard;
 
@@ -432,6 +432,21 @@ public class iMatController implements Initializable {
 		goTo(deliveryScreen);
 	}
 
+	@FXML
+	public void changePersonalInfo() {
+		
+	}
+
+	@FXML
+	public void changeDeliveryInfo() {
+
+	}
+
+	@FXML
+	public void changePaymentInfo() {
+
+	}
+
 	public void goToMyPages() {
 		postCodeInput.textProperty().addListener(new ChangeListener<String>() {
 			@Override
@@ -509,24 +524,6 @@ public class iMatController implements Initializable {
 			date_list.getChildren().add(dateListObject);
 		}
 
-		String email = IMatDataHandler.getInstance().getCustomer().getEmail();
-		if (email != null && !email.equals("")) {
-			epostadress.setText(email);
-		}
-
-		String address = IMatDataHandler.getInstance().getCustomer().getAddress();
-		if (address != null && !address.equals("")) {
-			homeadress.setText(address);
-		}
-
-		String cardNumber = IMatDataHandler.getInstance().getCreditCard().getCardNumber();
-		if (cardNumber != null && !cardNumber.equals("")) {
-			StringBuilder censoredCardNumber = new StringBuilder(cardNumber);
-			censoredCardNumber.replace(4, 12, "********");
-			// censoredCardNumber.replace(censoredCardNumber.length() - 5,
-			// censoredCardNumber.length() - 1, "****");
-			creditcard.setText(censoredCardNumber.toString());
-		}
 		goTo(myPagesRoot);
 	}
 
@@ -878,6 +875,12 @@ public class iMatController implements Initializable {
 		x = (int) x;
 		x = x / 100;
 		return x;
+	}
+
+	public void logOutUser() {
+		sessionActive = false;
+		navbarLogin.setText("Logga in");
+		goToStart();
 	}
 
 	public static void getDefaultPrice(Product p) {

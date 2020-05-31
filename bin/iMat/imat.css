@@ -245,7 +245,6 @@ Button:hover, Button:pressed {
 }
 
 .cartButton:pressed {
-
     -fx-background-color: #ced4da;
     -fx-cursor: hand;
 }
@@ -568,4 +567,32 @@ AnchorPane {
 
 .anchorProductView .tab-header-area {
     -fx-padding: 0.0;
+}
+
+.add-button{
+
+    -fx-background-color: #40C057;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 20;
+
+}
+
+.logout-button:hover, .logout-button:pressed {
+    -fx-cursor: hand;
+}
+
+.background-item{
+
+    -fx-outer-border: black;
+    -fx-body-color: #FFFFFF;
+    -fx-background-color:
+            -fx-outer-border,
+            -fx-body-color;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0px, 0px;
+
+}
+
+.background-item > .label {
+    -fx-font-size: 20px;
 }
