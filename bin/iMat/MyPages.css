@@ -46,6 +46,10 @@
     -fx-stroke-width: 2;
 }
 
+.button-active:hover, .button:hover, .button-active:pressed, .button:pressed {
+    -fx-cursor: hand;
+}
+
 .button{
     -fx-fill: #FFFFFF;
     -fx-stroke: #868E96;

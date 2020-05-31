@@ -39,6 +39,8 @@ public class iMatController implements Initializable {
 	@FXML
 	private AnchorPane window;
 
+	private AnchorPane beforeMyPages;
+
 	private DateListObject activeObject = null;
 	BackButton bb;
 
@@ -65,6 +67,8 @@ public class iMatController implements Initializable {
 	private AnchorPane loginScreen;
 	@FXML
 	private AnchorPane deliveryScreen;
+	@FXML
+	private Button navbarLogout;
 	@FXML
 	private AnchorPane signupOne;
 	@FXML
@@ -117,6 +121,26 @@ public class iMatController implements Initializable {
 	@FXML
 	private PasswordField repeatPasswordInput;
 
+	/* SIGNUP ONE */
+	@FXML
+	private TextField firstNameInput1;
+	@FXML
+	private TextField lastNameInput1;
+	@FXML
+	private TextField homePhoneInput1;
+	@FXML
+	private TextField cellPhoneInput1;
+	@FXML
+	private TextField emailInput1;
+	@FXML
+	private TextField repeatEmailInput1;
+	@FXML
+	private PasswordField passwordInput1;
+	@FXML
+	private PasswordField repeatPasswordInput1;
+
+	@FXML private AnchorPane progressBar;
+
 	@FXML
 	private Text cartTotal;
 
@@ -133,6 +157,16 @@ public class iMatController implements Initializable {
 	@FXML
 	private TextField apartmentInput;
 
+	/* SIGNUP TWO */
+	@FXML
+	private TextField addressInput1;
+	@FXML
+	private TextField postCodeInput1;
+	@FXML
+	private TextField cityInput1;
+	@FXML
+	private TextField apartmentInput1;
+
 	/* SIGNUP THREE */
 	@FXML
 	private TextField cardholderNameInput;
@@ -146,13 +180,30 @@ public class iMatController implements Initializable {
 	private TextField cvvInput;
 
 	@FXML
+	private TextField cardholderNameInput1;
+	@FXML
+	private TextField cardNumberInput1;
+	@FXML
+	private TextField cardExpireMonthInput1;
+	@FXML
+	private TextField cardExpireYearInput1;
+	@FXML
+	private TextField cvvInput1;
+
+	@FXML
 	private TabPane deliveryTabPane;
 	@FXML
 	private Text dateText;
 	@FXML
 	private Text timeText;
 	@FXML
+	private Text dateTextPreview;
+	@FXML
+	private Text timeTextPreview;
+	@FXML
 	private AnchorPane orderConfirmationScreen;
+	@FXML
+	private AnchorPane orderPreviewScreen;
 
 	@FXML
 	private Text categoryHeading;
@@ -198,6 +249,13 @@ public class iMatController implements Initializable {
 	@FXML
 	private ScrollPane scrollProducts;
 	private boolean cartOrWindowStatus;
+
+	@FXML
+	private AnchorPane signupOne_change;
+	@FXML
+	private AnchorPane signupTwo_change;
+	@FXML
+	private AnchorPane signupThree_change;
 
 	@SuppressWarnings("static-access")
 
@@ -270,14 +328,24 @@ public class iMatController implements Initializable {
 		history.add(getCurrentScreen());
 	}
 
+	public void goToPreview() {
+		goTo(orderPreviewScreen);
+		dateTextPreview.setText(deliveryTabPane.getSelectionModel().getSelectedItem().getText());
+		timeTextPreview.setText(((ToggleButton) time.getSelectedToggle()).getText());
+	}
+
 	public void placeOrder() {
 		dateText.setText(deliveryTabPane.getSelectionModel().getSelectedItem().getText());
 		timeText.setText(((ToggleButton) time.getSelectedToggle()).getText());
-		List<ShoppingItem> cartItems = dataHandler.getShoppingCart().getItems();
-		for (ShoppingItem si : cartItems) {
-			System.out.println(si.getProduct().getName() + "---" + si.getAmount());
+		List<ShoppingItem> cartItems = new ArrayList<>();
+		for (ShoppingItem si : dataHandler.getShoppingCart().getItems()) {
+			cartItems.add(new ShoppingItem(si.getProduct(), si.getAmount()));
 		}
-		dataHandler.placeOrder(false);
+		dataHandler.getShoppingCart().clear();
+		for (ShoppingItem si : cartItems) {
+			dataHandler.getShoppingCart().addItem(si);
+		}
+		dataHandler.placeOrder(true);
 		dataHandler.shutDown();
 		for (int i = 0; i < productItemList.size(); i++) {
 			productItemList.get(i).getItem().setAmount(0);
@@ -434,20 +502,52 @@ public class iMatController implements Initializable {
 
 	@FXML
 	public void changePersonalInfo() {
-
+		emailInput1.setText(dataHandler.getUser().getUserName());
+		passwordInput1.setText(dataHandler.getUser().getPassword());
+		firstNameInput1.setText(dataHandler.getCustomer().getFirstName());
+		lastNameInput1.setText(dataHandler.getCustomer().getLastName());
+		if (dataHandler.getCustomer().getMobilePhoneNumber().length() > 0)
+			cellPhoneInput1.setText(dataHandler.getCustomer().getMobilePhoneNumber());
+		if (dataHandler.getCustomer().getPhoneNumber().length() > 0)
+			homePhoneInput1.setText(dataHandler.getCustomer().getPhoneNumber());
+		goTo(signupOne_change, false);
 	}
 
 	@FXML
 	public void changeDeliveryInfo() {
-
+		if (dataHandler.getCustomer().getPostAddress().contains(":")) {
+			addressInput1.setText(dataHandler.getCustomer().getPostAddress().substring(0, dataHandler.getCustomer().getPostAddress().indexOf(':')));
+			apartmentInput1.setText(dataHandler.getCustomer().getPostAddress().substring(dataHandler.getCustomer().getPostAddress().indexOf(':')));
+		} else {
+			addressInput1.setText(dataHandler.getCustomer().getPostAddress());
+			apartmentInput1.clear();
+		}
+		postCodeInput1.setText(dataHandler.getCustomer().getPostCode());
+		cityInput1.setText(dataHandler.getCustomer().getAddress());
+		//if (dataHandler.getCustomer().get)
+		goTo(signupTwo_change, false);
 	}
 
 	@FXML
 	public void changePaymentInfo() {
-
+		cardholderNameInput1.setText(dataHandler.getCreditCard().getHoldersName());
+		cardNumberInput1.setText(dataHandler.getCreditCard().getCardNumber());
+		if (dataHandler.getCreditCard().getValidMonth() < 10)
+			cardExpireMonthInput1.setText("0" + dataHandler.getCreditCard().getValidMonth());
+		else
+			cardExpireMonthInput1.setText(Integer.toString(dataHandler.getCreditCard().getValidMonth()));
+		cardExpireYearInput1.setText(Integer.toString(dataHandler.getCreditCard().getValidYear()));
+		String cvv = Integer.toString(dataHandler.getCreditCard().getVerificationCode());
+		if (cvv.length() == 1)
+			cvv = "00" + cvv;
+		else if (cvv.length() == 2)
+			cvv = "0" + cvv;
+		cvvInput1.setText(cvv);
+		goTo(signupThree_change, false);
 	}
 
 	public void goToMyPages() {
+		beforeMyPages = getCurrentScreen();
 		postCodeInput.textProperty().addListener(new ChangeListener<String>() {
 			@Override
 			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -524,7 +624,22 @@ public class iMatController implements Initializable {
 			date_list.getChildren().add(dateListObject);
 		}
 
-		goTo(myPagesRoot);
+		Button backFromMP = new Button();
+		backFromMP.setText("<< Tillbaka");
+		backFromMP.getStyleClass().add("back-button");
+		backFromMP.setLayoutX(32);
+		backFromMP.setLayoutY(128);
+		myPagesRoot.getChildren().add(backFromMP);
+		backFromMP.setOnMouseClicked(e -> {
+			goTo(beforeMyPages, false);
+			categoryPane.getChildren().remove(backFromMP);
+		});
+		goTo(myPagesRoot, false);
+	}
+
+	@FXML
+	void abortChange() {
+		goToMyPages();
 	}
 
 	@FXML
@@ -545,7 +660,13 @@ public class iMatController implements Initializable {
 
 	@FXML
 	public void goToSignUp() {
+		if (getCurrentScreen().equals(myPagesRoot)) {
+			progressBar.setVisible(false);
+		} else {
+			progressBar.setVisible(true);
+		}
 		goTo(signupOne);
+
 	}
 
 	public void returnFromLogin() {
@@ -569,6 +690,7 @@ public class iMatController implements Initializable {
 				&& loginPasswordInput.getText().equals(backend.getUser().getPassword())) {
 			sessionActive = true;
 			navbarLogin.setText("Mina sidor");
+			navbarLogout.setVisible(true);
 			returnFromLogin();
 		} else {
 			errorLoginText.setVisible(true);
@@ -615,7 +737,12 @@ public class iMatController implements Initializable {
 			backend.getCustomer().setLastName(lastNameInput.getText());
 			backend.getCustomer().setPhoneNumber(homePhoneInput.getText());
 			backend.getCustomer().setMobilePhoneNumber(cellPhoneInput.getText());
-			goTo(signupTwo);
+			if (getPreviousScreen().equals(myPagesRoot)) {
+				backend.shutDown();
+				goToMyPages();
+			} else {
+				goTo(signupTwo);
+			}
 		}
 	}
 
@@ -629,11 +756,36 @@ public class iMatController implements Initializable {
 		if (empty(cityInput))
 			displayError(cityInput);
 		if (errorCount == 0) {
-			IMatDataHandler backend = IMatDataHandler.getInstance();
-			backend.getCustomer().setAddress(cityInput.getText());
-			backend.getCustomer().setPostCode(postCodeInput.getText());
-			backend.getCustomer().setPostAddress(addressInput.getText());
+			if (!empty(apartmentInput) && isNumeric(apartmentInput.getText())) {
+				dataHandler.getCustomer().setPostAddress(addressInput.getText()+":"+apartmentInput.getText());
+			} else {
+				dataHandler.getCustomer().setPostAddress(addressInput.getText());
+			}
+			dataHandler.getCustomer().setAddress(cityInput.getText());
+			dataHandler.getCustomer().setPostCode(postCodeInput.getText());
 			goTo(signupThree);
+		}
+	}
+
+	public void completeSignUpTwo_change() {
+		errorCount = 0;
+		postCodeInput1.setText(postCodeInput1.getText().replaceAll(" ", ""));
+		if (empty(addressInput1))
+			displayError(addressInput1);
+		if (empty(postCodeInput1) || postCodeInput1.getText().length() != 5)
+			displayError(postCodeInput1);
+		if (empty(cityInput1))
+			displayError(cityInput1);
+		if (errorCount == 0) {
+			if (!empty(apartmentInput1) && isNumeric(apartmentInput1.getText())) {
+				dataHandler.getCustomer().setPostAddress(addressInput1.getText()+":"+apartmentInput1.getText());
+			} else {
+				dataHandler.getCustomer().setPostAddress(addressInput1.getText());
+			}
+			dataHandler.getCustomer().setAddress(cityInput1.getText());
+			dataHandler.getCustomer().setPostCode(postCodeInput1.getText());
+			dataHandler.shutDown();
+			goBack();
 		}
 	}
 
@@ -682,6 +834,69 @@ public class iMatController implements Initializable {
 			goTo(signupComplete, false);
 			sessionActive = true;
 			backend.shutDown();
+		}
+	}
+
+	public void completeSignUpThree_change() {
+		errorCount = 0;
+		cardNumberInput1.setText(cardNumberInput1.getText().replaceAll(" ", ""));
+		if (empty(cardholderNameInput1))
+			displayError(cardholderNameInput1);
+		if (empty(cardNumberInput1) || cardNumberInput1.getText().length() != 16)
+			displayError(cardNumberInput1);
+		if (empty(cardExpireMonthInput1) || cardExpireMonthInput1.getText().length() != 2
+				|| !isValidMonth(cardExpireMonthInput1.getText()))
+			displayError(cardExpireMonthInput1);
+		if (empty(cardExpireYearInput1) || cardExpireYearInput1.getText().length() != 2
+				|| !isValidYear(cardExpireYearInput1.getText()))
+			displayError(cardExpireYearInput1);
+		if (empty(cvvInput1) || cvvInput1.getText().length() != 3)
+			displayError(cvvInput1);
+		if (errorCount == 0) {
+			dataHandler.getCreditCard().setHoldersName(cardholderNameInput1.getText());
+			dataHandler.getCreditCard().setCardNumber(cardNumberInput1.getText());
+
+			if (cardNumberInput1.getText().charAt(0) == '4')
+				dataHandler.getCreditCard().setCardType("Visa");
+			else
+				dataHandler.getCreditCard().setCardType("MasterCard");
+
+			dataHandler.getCreditCard().setValidMonth(Integer.parseInt(cardExpireMonthInput1.getText()));
+			dataHandler.getCreditCard().setValidYear(Integer.parseInt(cardExpireYearInput1.getText()));
+			dataHandler.getCreditCard().setVerificationCode(Integer.parseInt(cvvInput1.getText()));
+			dataHandler.shutDown();
+			System.out.println(dataHandler.getCreditCard().getCardNumber());
+			goBack();
+		}
+	}
+
+
+	public void completeSignUpOne_change() {
+		errorCount = 0;
+
+		if (empty(emailInput1))
+			displayError(emailInput1);
+		if (empty(firstNameInput1))
+			displayError(firstNameInput1);
+		if (empty(lastNameInput1))
+			displayError(lastNameInput1);
+		if (empty(passwordInput1))
+			displayError(passwordInput1);
+		if (!validate(emailInput1.getText())) {
+			displayError(emailInput1);
+		}
+
+		if (errorCount == 0) {
+			IMatDataHandler backend = IMatDataHandler.getInstance();
+			backend.getUser().setUserName(emailInput1.getText());
+			backend.getUser().setPassword(passwordInput1.getText());
+			backend.getCustomer().setEmail(emailInput1.getText());
+			backend.getCustomer().setFirstName(firstNameInput1.getText());
+			backend.getCustomer().setLastName(lastNameInput1.getText());
+			backend.getCustomer().setPhoneNumber(homePhoneInput1.getText());
+			backend.getCustomer().setMobilePhoneNumber(cellPhoneInput1.getText());
+			backend.shutDown();
+			goBack();
 		}
 	}
 
@@ -774,7 +989,6 @@ public class iMatController implements Initializable {
 		for (ShoppingItem si : activeOrder.getItems()) {
 			if (!inCart(si)) {
 				dataHandler.getShoppingCart().addItem(si);
-				System.out.println(si.getAmount());
 				notifyCart(si);
 			}
 
@@ -878,6 +1092,7 @@ public class iMatController implements Initializable {
 	}
 
 	public void logOutUser() {
+		navbarLogout.setVisible(false);
 		sessionActive = false;
 		navbarLogin.setText("Logga in");
 		goToStart();
@@ -907,6 +1122,6 @@ public class iMatController implements Initializable {
 		for (Product p : startPrice.keySet()) {
 			getDefaultPrice(p);
 		}
-
 	}
+
 }

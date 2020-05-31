@@ -62,7 +62,6 @@ public class Cart extends AnchorPane {
 			} else {
 				parentController.clearItemFromCart(item);
 			}
-
 		}
 		if (list.size() > 0) {
 			btnKassa.setDisable(false);

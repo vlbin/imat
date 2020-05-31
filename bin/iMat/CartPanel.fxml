@@ -21,17 +21,17 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="clearFromCart" fitHeight="32.0" fitWidth="32.0" layoutX="310.0" layoutY="39.0" onMouseClicked="#deleteItem" onMouseDragged="#clearButtonMousePressed" onMouseEntered="#clearButtonMouseEntered" onMouseExited="#clearButtonMouseExited" pickOnBounds="true" preserveRatio="true" styleClass="clear-from-cart" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="39.0">
+      <ImageView fx:id="clearFromCart" fitHeight="32.0" fitWidth="32.0" layoutX="300.0" layoutY="39.0" onMouseClicked="#deleteItem" onMouseDragged="#clearButtonMousePressed" onMouseEntered="#clearButtonMouseEntered" onMouseExited="#clearButtonMouseExited" pickOnBounds="true" preserveRatio="true" styleClass="clear-from-cart" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="39.0">
          <image>
             <Image url="@../resources/trash.png" />
          </image></ImageView>
-      <Label fx:id="priceAll" layoutX="580.0" layoutY="31.0" text="34:00" AnchorPane.bottomAnchor="28.599999999999994" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="31.0">
+      <Label fx:id="priceAll" layoutX="565.0" layoutY="31.0" prefHeight="45.0" prefWidth="124.0" text="34:00" AnchorPane.bottomAnchor="29.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="31.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="cartBought" alignment="CENTER" layoutX="412.0" layoutY="29.0" onAction="#changedText" prefHeight="51.0" prefWidth="90.0" styleClass="boughtField" text="0" />
-      <Button fx:id="buttonHigher" layoutX="502.0" layoutY="29.0" maxHeight="5.0" maxWidth="50.0" minHeight="50.0" minWidth="40.0" mnemonicParsing="false" onMouseClicked="#addThisItem" onMouseEntered="#hoverHigherColor" onMouseExited="#outsideHigherColor" onMousePressed="#pressedHigherColor" prefHeight="50.0" prefWidth="50.0" styleClass="higherButton">
+      <TextField fx:id="cartBought" alignment="CENTER" layoutX="402.0" layoutY="29.0" onAction="#changedText" prefHeight="51.0" prefWidth="90.0" styleClass="boughtField" text="0" />
+      <Button fx:id="buttonHigher" layoutX="492.0" layoutY="29.0" maxHeight="5.0" maxWidth="50.0" minHeight="50.0" minWidth="40.0" mnemonicParsing="false" onMouseClicked="#addThisItem" onMouseEntered="#hoverHigherColor" onMouseExited="#outsideHigherColor" onMousePressed="#pressedHigherColor" prefHeight="50.0" prefWidth="50.0" styleClass="higherButton">
          <graphic>
             <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -40,7 +40,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="buttonLower" layoutX="362.0" layoutY="29.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="40.0" mnemonicParsing="false" onMouseClicked="#removeThisItem" onMouseEntered="#hoverLowerColor" onMouseExited="#outsideLowerColor" onMousePressed="#pressedLowerColor" prefHeight="50.0" prefWidth="50.0" styleClass="lowerButton" textFill="#e4dfdf">
+      <Button fx:id="buttonLower" layoutX="352.0" layoutY="29.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="40.0" mnemonicParsing="false" onMouseClicked="#removeThisItem" onMouseEntered="#hoverLowerColor" onMouseExited="#outsideLowerColor" onMousePressed="#pressedLowerColor" prefHeight="50.0" prefWidth="50.0" styleClass="lowerButton" textFill="#e4dfdf">
          <graphic>
             <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                <image>

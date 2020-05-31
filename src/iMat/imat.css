@@ -72,6 +72,11 @@
     -fx-border-color: grey;
 }
 
+.delivery-screen .tab:hover {
+    -fx-background-color: #e9ecef;
+    -fx-cursor: hand;
+}
+
 .delivery-screen .tab:selected {
     -fx-background-color: #FAB005;
     -fx-font-weight: bold;
@@ -83,7 +88,7 @@
 }
 
 .toggle-button {
-    -fx-background-color: white;
+    -fx-background-color: transparent;
     -fx-text-fill: black;
     -fx-font-size: 24px;
 }
@@ -262,6 +267,16 @@ Button:hover, Button:pressed {
     -fx-background-color: white;
 }
 
+.delivery-time:pressed {
+    -fx-background-color: #dee2e6;
+    -fx-cursor: hand;
+}
+
+.delivery-time:hover {
+    -fx-background-color: #e9ecef;
+    -fx-cursor: hand;
+}
+
 .text-small.white {
     -fx-fill: #FFFFFF;
 }
@@ -286,9 +301,9 @@ AnchorPane {
     -fx-fill: #FFFFFF;
 }
 
-.delivery-time.active {
+/*.delivery-time.active {
     -fx-background-color: #FAB005;
-}
+}*/
 
 .delivery-pane.active {
     -fx-background-color: #FAB005;
@@ -578,6 +593,10 @@ AnchorPane {
 }
 
 .logout-button:hover, .logout-button:pressed {
+    -fx-cursor: hand;
+}
+
+.icon-button:hover, .icon-button:pressed {
     -fx-cursor: hand;
 }
 

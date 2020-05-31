@@ -58,7 +58,7 @@ public class CartPanel extends AnchorPane {
 			// lblKundvagnEko.setText("Eko");
 		}
 		this.item = item;
-		priceAll.setText(iMatController.roundPrice(item.getTotal(), 2));
+		priceAll.setText(iMatController.roundPrice(item.getTotal(), 2) + " kr");
 		addTextLimiter(cartBought, 2);
 		changeText();
 		outsideLowerColor();
@@ -127,12 +127,11 @@ public class CartPanel extends AnchorPane {
 			}
 			outsideHigherColor();
 		}
-
 	}
 
 	private void changeText() {
 		String s = Double.toString(item.getAmount());
-		priceAll.setText(iMatController.roundPrice(item.getTotal(), 2));
+		priceAll.setText(iMatController.roundPrice(item.getTotal(), 2)  + " kr");
 		cartBought.setText(s.substring(0, s.indexOf(".")));
 		parentController.notifyCart(item);
 	}

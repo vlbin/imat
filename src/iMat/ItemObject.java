@@ -34,7 +34,7 @@ public class ItemObject extends AnchorPane {
         item_image.setImage(IMatDataHandler.getInstance().getFXImage(item.getProduct()));
         item_name.setText(item.getProduct().getName());
         item_amount.setText("" + (int)item.getAmount() + " st");
-        item_price.setText("" + item.getAmount() * item.getProduct().getPrice() + "kr");
+        item_price.setText(iMatController.roundPrice(item.getTotal(), 2));
 
     }
 

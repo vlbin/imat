@@ -24,7 +24,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="478.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="478.0" layoutY="39.0" onMouseClicked="#addItemFromOrder" pickOnBounds="true" preserveRatio="true" styleClass="icon-button">
          <image>
             <Image url="@../resources/add-cart.png" />
          </image>

@@ -60,13 +60,16 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 			SpecialpriceBackground.setVisible(false);
 			pricespecial.setVisible(false);
 		} else {
-			iMatController.addDefaultPrice(item.getProduct());
+			specialPrice.setVisible(true);
+			SpecialpriceBackground.setVisible(true);
+			pricespecial.setVisible(false);
+			//iMatController.addDefaultPrice(item.getProduct());
 			specialPrice.setText(Integer.toString(specialPric) + "% rabatt");
 			specialPrice.setStyle("-fx-font-family: \"Bebas Neue\";");
-			price.setStrikethrough(true);
-			double sum = parentController.getPrice(item.getProduct(), specialPric);
-			item.getProduct().setPrice(sum);
-			pricespecial.setText(sum + " kr");
+			//price.setStrikethrough(true);
+			//double sum = parentController.getPrice(item.getProduct(), specialPric);
+			//item.getProduct().setPrice(sum);
+			//pricespecial.setText(sum + " kr");*/
 
 		}
 		StringBuilder sb = new StringBuilder(item.getProduct().getName());
@@ -89,6 +92,11 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 	@FXML
 	protected void onClick(Event event) {
 		parentController.populateProductDetailView(item, specialPric);
+	}
+
+	public void clearText() {
+		String s = Double.toString(0);
+		bought.setText(s.substring(0, s.indexOf(".")));
 	}
 
 	public void changeText() {
