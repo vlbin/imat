@@ -32,6 +32,8 @@ public class CartPanel extends AnchorPane {
 	@FXML
 	private Button buttonLower;
 	@FXML
+	private Button buttonHigher;
+	@FXML
 	private ImageView clearFromCart;
 	private iMatController parentController;
 	private ShoppingItem item;
@@ -59,7 +61,8 @@ public class CartPanel extends AnchorPane {
 		priceAll.setText(parentController.roundPrice(item.getTotal(), 2));
 		addTextLimiter(cartBought, 2);
 		changeText();
-		outsideColor();
+		outsideLowerColor();
+		outsideHigherColor();
 	}
 
 	@FXML
@@ -85,28 +88,38 @@ public class CartPanel extends AnchorPane {
 
 	@FXML
 	protected void addThisItem(Event event) {
-		parentController.increaseItem(item);
-		changeText();
-		outsideColor();
-		event.consume();
+		if (!max()) {
+			parentController.increaseItem(item);
+			changeText();
+			hoverHigherColor();
+			outsideLowerColor();
+			event.consume();
+		}
+
 	}
 
 	@FXML
 	protected void removeThisItem(Event event) {
-		parentController.decreaseItem(item);
-		changeText();
-		hoverColor();
-		event.consume();
-		if (zero()) {
-			((FlowPane) this.getParent()).getChildren().remove(this);
+		if (!zero()) {
+			parentController.decreaseItem(item);
+			changeText();
+			hoverLowerColor();
+			outsideHigherColor();
+			event.consume();
+			if (zero()) {
+				((FlowPane) this.getParent()).getChildren().remove(this);
+			}
 		}
 	}
 
 	@FXML
 	protected void changedText() {
-		if (parentController.isNumeric(cartBought.getText())) {
+		if (iMatController.isNumeric(cartBought.getText())) {
 			double temp = Double.parseDouble(cartBought.getText());
-			if (temp > -1) {
+			if (temp == 0) {
+				parentController.changedAmount(item, temp);
+				((FlowPane) this.getParent()).getChildren().remove(this);
+			} else if (temp > -1) {
 				int i = cartBought.getCaretPosition();
 				parentController.changedAmount(item, temp);
 				changeText();
@@ -119,7 +132,7 @@ public class CartPanel extends AnchorPane {
 
 	private void changeText() {
 		String s = Double.toString(item.getAmount());
-		priceAll.setText(parentController.roundPrice(item.getTotal(), 2));
+		priceAll.setText(iMatController.roundPrice(item.getTotal(), 2));
 		cartBought.setText(s.substring(0, s.indexOf(".")));
 		parentController.notifyCart(item);
 	}
@@ -140,7 +153,7 @@ public class CartPanel extends AnchorPane {
 	}
 
 	@FXML
-	public void outsideColor() {
+	public void outsideLowerColor() {
 		if (zero()) {
 			buttonLower.setStyle("-fx-background-color: #e4dfdf;");
 		} else {
@@ -150,7 +163,7 @@ public class CartPanel extends AnchorPane {
 	}
 
 	@FXML
-	public void hoverColor() {
+	public void hoverLowerColor() {
 		if (zero()) {
 			buttonLower.setStyle("-fx-background-color: #e4dfdf;");
 			buttonLower.setStyle("-fx-cursor: default;");
@@ -161,13 +174,56 @@ public class CartPanel extends AnchorPane {
 	}
 
 	@FXML
-	public void pressedColor() {
+	public void pressedLowerColor() {
 		if (zero()) {
 			buttonLower.setStyle("-fx-background-color: #e4dfdf;");
+			buttonLower.setStyle("-fx-cursor: default;");
 		} else {
 			buttonLower.setStyle("-fx-background-color: #5a0e0e;");
 		}
 
+	}
+
+	@FXML
+	public void outsideHigherColor() {
+		if (max()) {
+			buttonHigher.setStyle("-fx-background-color: #e4dfdf;");
+		} else {
+			buttonHigher.setStyle("-fx-background-color: #0dbb29;");
+		}
+
+	}
+
+	@FXML
+	public void hoverHigherColor() {
+		if (max()) {
+			buttonHigher.setStyle("-fx-cursor: default;");
+			buttonHigher.setStyle("-fx-background-color: #e4dfdf;");
+		} else {
+			buttonHigher.setStyle("-fx-background-color: #027814;");
+		}
+
+	}
+
+	@FXML
+	public void pressedHigherColor() {
+		if (max()) {
+
+			buttonHigher.setStyle("-fx-cursor: default;");
+			buttonHigher.setStyle("-fx-background-color: #e4dfdf;");
+		} else {
+			buttonHigher.setStyle("-fx-background-color: #065d13;");
+		}
+
+	}
+
+	private boolean max() {
+		if (cartBought.getText().equals("99")) {
+			// buttonHigher.setDisable(true);
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	private boolean zero() {

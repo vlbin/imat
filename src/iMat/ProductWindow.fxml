@@ -156,8 +156,8 @@
                         <Font name="Arial Narrow" size="28.0" />
                      </font>
                   </Text>
-            <TextField fx:id="amountProduct" alignment="CENTER" layoutX="790.0" layoutY="180.0" prefHeight="81.0" prefWidth="168.0" styleClass="boughtProduct" text="0" />
-            <Button layoutX="958.0" layoutY="180.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#addThisItem" prefHeight="80.0" prefWidth="80.0" styleClass="higherButton">
+            <TextField fx:id="amountProduct" alignment="CENTER" layoutX="790.0" layoutY="180.0" onAction="#changedText" prefHeight="81.0" prefWidth="168.0" styleClass="boughtProduct" text="0" />
+            <Button fx:id="buttonHigher" layoutX="958.0" layoutY="180.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#addThisItem" onMouseEntered="#hoverHigherColor" onMouseExited="#outsideHigherColor" onMousePressed="#pressedHigherColor" prefHeight="80.0" prefWidth="80.0" styleClass="higherButton">
                <graphic>
                   <Group>
                      <children>
@@ -167,7 +167,7 @@
                   </Group>
                </graphic>
             </Button>
-            <Button fx:id="buttonLower" layoutX="710.0" layoutY="180.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#removeThisItem" onMouseEntered="#hoverColor" onMouseExited="#outsideColor" onMousePressed="#pressedColor" prefHeight="80.0" prefWidth="80.0" styleClass="lowerButton">
+            <Button fx:id="buttonLower" layoutX="710.0" layoutY="180.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#removeThisItem" onMouseEntered="#hoverLowerColor" onMouseExited="#outsideLowerColor" onMousePressed="#pressedLowerColor" prefHeight="80.0" prefWidth="80.0" styleClass="lowerButton">
                <graphic>
                         <Line endX="50.0" fill="#e8e8e8" stroke="WHITE" strokeWidth="4.0" />
                </graphic>

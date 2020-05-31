@@ -28,15 +28,7 @@
             </Group>
             <Text fx:id="price" layoutX="20.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="productPrice" text="Text" />
             <TextField fx:id="bought" alignment="CENTER" layoutX="70.0" layoutY="285.0" onAction="#changedText" prefHeight="51.0" prefWidth="120.0" styleClass="boughtField" text="0" />
-            <Button fx:id="buttonHigher" layoutX="190.0" layoutY="285.0" maxHeight="5.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#addThisItem" prefHeight="50.0" prefWidth="50.0" styleClass="higherButton">
-               <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../resources/plus.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
-            <Button fx:id="buttonLower" layoutX="20.0" layoutY="285.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#removeThisItem" onMouseEntered="#hoverColor" onMouseExited="#outsideColor" onMousePressed="#pressedColor" prefHeight="50.0" prefWidth="50.0" styleClass="lowerButton" textFill="#e4dfdf">
+            <Button fx:id="buttonLower" layoutX="20.0" layoutY="285.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#removeThisItem" onMouseEntered="#hoverLowerColor" onMouseExited="#outsideLowerColor" onMousePressed="#pressedLowerColor" prefHeight="50.0" prefWidth="50.0" styleClass="lowerButton" textFill="#e4dfdf">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -47,6 +39,15 @@
             </Button>
             <Text fx:id="productName" layoutX="20.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="productName" text="Text" />
             <Text fx:id="pricespecial" fill="#ab2121" layoutX="125.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="productPrice" text="Text" />
+            <Button fx:id="buttonHigher" layoutX="190.0" layoutY="285.0" maxHeight="5.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#addThisItem" onMouseEntered="#hoverHigherColor" onMouseExited="#outsideHigherColor" onMousePressed="#pressedHigherColor" prefHeight="50.0" prefWidth="50.0" styleClass="higherButton">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/plus.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
    </children>

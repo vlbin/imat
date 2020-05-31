@@ -32,127 +32,16 @@
       <AnchorPane fx:id="loginScreen" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Text layoutX="862.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Logga in" textAlignment="CENTER" />
-            <Button layoutX="881.0" layoutY="627.0" mnemonicParsing="false" onAction="#handleLogin" styleClass="green-button" text="Logga in" />
-            <TextField fx:id="loginEmailInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="401.0" prefHeight="64.0" prefWidth="560.0" promptText="E-postadress" styleClass="form-input" />
-            <PasswordField fx:id="loginPasswordInput" layoutX="680.0" layoutY="480.0" prefHeight="64.0" prefWidth="560.0" promptText="Lösenord" styleClass="form-input" />
-            <Label layoutX="778.0" layoutY="697.0" styleClass="form-text" text="Glömt lösenord? Klicka" />
-            <Button layoutX="1087.0" layoutY="697.0" mnemonicParsing="false" styleClass="text-button" text="här" />
-            <Label layoutX="803.0" layoutY="968.0" styleClass="form-text" text="Inget konto? Klicka" />
-            <Button layoutX="1061.0" layoutY="968.0" mnemonicParsing="false" onAction="#goToSignUp" styleClass="text-button" text="här" />
+            <Button layoutX="880.0" layoutY="625.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="60.0" prefWidth="160.0" styleClass="green-button" text="Logga in" />
+            <TextField fx:id="loginEmailInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="401.0" onAction="#handleLogin" prefHeight="64.0" prefWidth="560.0" promptText="E-postadress" styleClass="form-input" />
+            <PasswordField fx:id="loginPasswordInput" layoutX="680.0" layoutY="480.0" onAction="#handleLogin" prefHeight="64.0" prefWidth="560.0" promptText="Lösenord" styleClass="form-input" />
+            <Label layoutX="778.0" layoutY="710.0" styleClass="form-text" text="Glömt lösenord? Klicka" />
+            <Button layoutX="1087.0" layoutY="710.0" mnemonicParsing="false" styleClass="text-button" text="här" />
+            <Label layoutX="803.0" layoutY="780.0" styleClass="form-text" text="Inget konto? Klicka" />
+            <Button layoutX="1061.0" layoutY="780.0" mnemonicParsing="false" onAction="#goToSignUp" styleClass="text-button" text="här" />
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" />
             <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
             <Text fx:id="errorLoginText" layoutX="685.0" layoutY="587.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-text" text="Fel kombination av användarnamn och lösenord!" visible="false" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="returningOrNew" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css">
-         <children>
-            <Text layoutX="592.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Har du handlat på iMat tidigare?" textAlignment="CENTER" />
-            <Button fx:id="returningCustomerButton" layoutX="704.0" layoutY="405.0" mnemonicParsing="false" onAction="#returningCustomerClicked" styleClass="green-button" text="Ja, fortsätt" />
-            <Button fx:id="newCustomerButton" layoutX="932.0" layoutY="404.0" mnemonicParsing="false" onAction="#newCustomerClicked" styleClass="blank-button" text="Nej, skapa konto" />
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="orderConfirmationScreen" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../../../imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Button layoutX="931.0" layoutY="702.0" mnemonicParsing="false" onAction="#goToStart" styleClass="green-button" text="Till startsidan" />
-            <Text layoutX="931.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Din order är på väg!" />
-            <Text layoutX="931.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-text" text="Leveranstid:" />
-            <ImageView fitHeight="420.0" fitWidth="427.0" layoutX="434.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/undraw_on_the_way_ldaq.png" />
-               </image>
-            </ImageView>
-            <Text fx:id="dateText" layoutX="931.0" layoutY="564.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18/5">
-               <styleClass>
-                  <String fx:value="form-text" />
-                  <String fx:value="bold" />
-               </styleClass>
-            </Text>
-            <Text fx:id="timeText" layoutX="931.0" layoutY="611.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8:00-9:00">
-               <styleClass>
-                  <String fx:value="form-text" />
-                  <String fx:value="bold" />
-               </styleClass>
-            </Text>
-            <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="signupThree" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Button layoutX="898.0" layoutY="568.0" mnemonicParsing="false" onAction="#completeSignUpThree" styleClass="green-button" text="Nästa" />
-            <TextField fx:id="cardholderNameInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="313.0" prefHeight="64.0" prefWidth="560.0" promptText="Namn på kort" styleClass="form-input" />
-            <TextField fx:id="cardNumberInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="393.0" prefHeight="64.0" prefWidth="560.0" promptText="Kortnummer" styleClass="form-input" />
-            <TextField fx:id="cardExpireMonthInput" accessibleRoleDescription="rd" layoutX="681.0" layoutY="473.0" prefHeight="64.0" prefWidth="176.0" promptText="MM" styleClass="form-input" />
-            <TextField fx:id="cardExpireYearInput" accessibleRoleDescription="rd" layoutX="873.0" layoutY="473.0" prefHeight="64.0" prefWidth="176.0" promptText="ÅÅ" styleClass="form-input" />
-            <TextField fx:id="cvvInput" accessibleRoleDescription="rd" layoutX="1065.0" layoutY="473.0" prefHeight="64.0" prefWidth="176.0" promptText="CVV" styleClass="form-input" />
-            <Label layoutX="733.0" layoutY="756.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
-            <Button layoutX="1143.0" layoutY="756.0" mnemonicParsing="false" onAction="#goToLogin" styleClass="text-button" text="här" />
-            <AnchorPane layoutX="335.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1250.0" stylesheets="@../../../imat.css">
-               <children>
-                  <Label layoutY="67.0" styleClass="progress-label" text="Personuppgifter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
-                  <Label layoutX="493.0" layoutY="68.0" styleClass="progress-label" text="Leveransinformation" AnchorPane.bottomAnchor="0.0" />
-                  <Label layoutX="1025.0" layoutY="80.0" text="Betalningsinformation" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                     <styleClass>
-                        <String fx:value="progress-label" />
-                        <String fx:value="active" />
-                     </styleClass>
-                  </Label>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="114.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" styleClass="progress-bar" width="1000.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="119.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" width="1000.0">
-                     <styleClass>
-                        <String fx:value="progress-bar" />
-                        <String fx:value="active" />
-                     </styleClass>
-                  </Rectangle>
-                  <Circle fill="DODGERBLUE" layoutX="114.0" layoutY="29.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="0.0">
-                     <styleClass>
-                        <String fx:value="progress-circle" />
-                        <String fx:value="active" />
-                     </styleClass>
-                  </Circle>
-                  <Circle fill="DODGERBLUE" layoutX="614.0" layoutY="23.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="596.0" AnchorPane.topAnchor="0.0">
-                     <styleClass>
-                        <String fx:value="progress-circle" />
-                        <String fx:value="active" />
-                     </styleClass>
-                  </Circle>
-                  <Circle fill="DODGERBLUE" layoutX="624.0" layoutY="33.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="1096.0" AnchorPane.topAnchor="0.0">
-                     <styleClass>
-                        <String fx:value="progress-circle" />
-                        <String fx:value="active" />
-                     </styleClass>
-                  </Circle>
-                  <Label layoutX="106.0" layoutY="6.0" text="1">
-                     <styleClass>
-                        <String fx:value="progress-number" />
-                        <String fx:value="active" />
-                     </styleClass>
-                  </Label>
-                  <Label layoutX="610.0" layoutY="6.0" text="2">
-                     <styleClass>
-                        <String fx:value="progress-number" />
-                        <String fx:value="active" />
-                     </styleClass>
-                  </Label>
-                  <Label layoutX="1110.0" layoutY="6.0" text="3">
-                     <styleClass>
-                        <String fx:value="progress-number" />
-                        <String fx:value="active" />
-                     </styleClass>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <Text layoutX="1251.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
-            <Text layoutX="1251.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
-            <Text layoutX="1251.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
-            <Text layoutX="1052.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
-            <Text layoutX="861.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
-            <Label layoutX="741.0" layoutY="699.0" styleClass="text-small" text="Obligatoriska fält markeras med" />
-            <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
-            <Text layoutX="1168.0" layoutY="726.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="myPagesRoot" prefHeight="1080.0" prefWidth="1920.0" styleClass="background-items" stylesheets="@MyPages.css">
@@ -281,7 +170,7 @@
             <Pane layoutX="218.0" layoutY="468.0" prefHeight="90.0" prefWidth="400.0" styleClass="button-active">
                <children>
                   <Rectangle fill="DODGERBLUE" height="90.0" stroke="BLACK" strokeType="INSIDE" styleClass="button" width="400.0" />
-                  <Label alignment="CENTER" layoutX="153.0" layoutY="28.0" mouseTransparent="true" text="Logga ut" textFill="RED">
+                  <Label alignment="CENTER" mouseTransparent="true" prefHeight="90.0" prefWidth="400.0" text="Logga ut" textFill="RED">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -296,66 +185,44 @@
                         <Image url="@../resources/cart.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="cartTotal1" layoutX="69.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-small" text="0 kr" wrappingWidth="122.0" />
+                  <Text fx:id="cartTotal1" layoutX="69.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-small" text="0 kr" wrappingWidth="125.0" />
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="signupOne" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="orderConfirmationScreen" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../../../imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
-               </children>
-            </AnchorPane>
-            <Button layoutX="896.0" layoutY="844.0" mnemonicParsing="false" onAction="#completeSignUpOne" styleClass="green-button" text="Nästa" />
-            <Label layoutX="731.0" layoutY="969.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
-            <Button layoutX="1137.0" layoutY="969.0" mnemonicParsing="false" onAction="#goToLogin" styleClass="text-button" text="här" />
-            <AnchorPane layoutX="335.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1250.0" stylesheets="@../../../imat.css">
-               <children>
-                  <Label layoutY="67.0" text="Personuppgifter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
-                     <styleClass>
-                        <String fx:value="progress-label" />
-                        <String fx:value="active" />
-                     </styleClass>
-                  </Label>
-                  <Label layoutX="493.0" layoutY="68.0" styleClass="progress-label" text="Leveransinformation" AnchorPane.bottomAnchor="0.0" />
-                  <Label layoutX="1025.0" layoutY="68.0" styleClass="progress-label" text="Betalningsinformation" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="114.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" styleClass="progress-bar" width="1000.0" />
-                  <Circle fill="DODGERBLUE" layoutX="114.0" layoutY="29.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="0.0">
-                     <styleClass>
-                        <String fx:value="progress-circle" />
-                        <String fx:value="active" />
-                     </styleClass>
-                  </Circle>
-                  <Circle fill="DODGERBLUE" layoutX="614.0" layoutY="23.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" styleClass="progress-circle" AnchorPane.leftAnchor="596.0" AnchorPane.topAnchor="0.0" />
-                  <Circle fill="DODGERBLUE" layoutX="624.0" layoutY="33.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" styleClass="progress-circle" AnchorPane.leftAnchor="1096.0" AnchorPane.topAnchor="0.0" />
-                  <Label layoutX="107.0" layoutY="6.0" text="1">
-                     <styleClass>
-                        <String fx:value="progress-number" />
-                        <String fx:value="active" />
-                     </styleClass>
-                  </Label>
-                  <Label layoutX="610.0" layoutY="5.0" styleClass="progress-number" text="2" />
-                  <Label layoutX="1110.0" layoutY="6.0" styleClass="progress-number" text="3" />
-               </children>
-            </AnchorPane>
-            <TextField fx:id="firstNameInput" accessibleRoleDescription="rd" layoutX="678.0" layoutY="273.0" prefHeight="64.0" prefWidth="272.0" promptText="Förnamn" styleClass="form-input" />
-            <TextField fx:id="lastNameInput" accessibleRoleDescription="rd" layoutX="966.0" layoutY="273.0" prefHeight="64.0" prefWidth="272.0" promptText="Efternamn" styleClass="form-input" />
-            <TextField fx:id="homePhoneInput" accessibleRoleDescription="rd" layoutX="678.0" layoutY="353.0" prefHeight="64.0" prefWidth="560.0" promptText="Telefonnummer (hem)" styleClass="form-input" />
-            <TextField fx:id="cellPhoneInput" accessibleRoleDescription="rd" layoutX="678.0" layoutY="433.0" prefHeight="64.0" prefWidth="560.0" promptText="Telefonnummer (mobil)" styleClass="form-input" />
-            <TextField fx:id="emailInput" accessibleRoleDescription="rd" layoutX="677.0" layoutY="513.0" prefHeight="64.0" prefWidth="560.0" promptText="E-postadress" styleClass="form-input" />
-            <TextField fx:id="repeatEmailInput" accessibleRoleDescription="rd" layoutX="677.0" layoutY="593.0" prefHeight="64.0" prefWidth="560.0" promptText="Upprepa e-postadress" styleClass="form-input" />
-            <PasswordField fx:id="passwordInput" layoutX="677.0" layoutY="673.0" prefHeight="64.0" prefWidth="560.0" promptText="Lösenord" styleClass="form-input" />
-            <PasswordField fx:id="repeatPasswordInput" layoutX="677.0" layoutY="753.0" prefHeight="64.0" prefWidth="560.0" promptText="Upprepa lösenord" styleClass="form-input" />
-            <Text layoutX="953.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
-            <Text layoutX="1244.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
-            <Text layoutX="1249.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
-            <Text layoutX="1249.0" layoutY="602.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
-            <Text layoutX="1249.0" layoutY="682.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
-            <Text layoutX="1249.0" layoutY="762.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
-            <Label layoutX="737.0" layoutY="928.0" styleClass="text-small" text="Obligatoriska fält markeras med" />
-            <Text layoutX="1169.0" layoutY="951.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Button layoutX="931.0" layoutY="702.0" mnemonicParsing="false" onAction="#goToStart" styleClass="green-button" text="Till startsidan" />
+            <Text layoutX="931.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Din order är på väg!" />
+            <Text layoutX="931.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-text" text="Leveranstid:" />
+            <ImageView fitHeight="420.0" fitWidth="427.0" layoutX="434.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/undraw_on_the_way_ldaq.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="dateText" layoutX="931.0" layoutY="564.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18/5">
+               <styleClass>
+                  <String fx:value="form-text" />
+                  <String fx:value="bold" />
+               </styleClass>
+            </Text>
+            <Text fx:id="timeText" layoutX="931.0" layoutY="611.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8:00-9:00">
+               <styleClass>
+                  <String fx:value="form-text" />
+                  <String fx:value="bold" />
+               </styleClass>
+            </Text>
+            <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="returningOrNew" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css">
+         <children>
+            <Text layoutX="592.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Har du handlat på iMat tidigare?" textAlignment="CENTER" />
+            <Button fx:id="returningCustomerButton" layoutX="704.0" layoutY="405.0" mnemonicParsing="false" onAction="#returningCustomerClicked" styleClass="green-button" text="Ja, fortsätt" />
+            <Button fx:id="newCustomerButton" layoutX="932.0" layoutY="404.0" mnemonicParsing="false" onAction="#newCustomerClicked" styleClass="blank-button" text="Nej, skapa konto" />
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="signupTwo" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#goToStart" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -365,9 +232,9 @@
                   <Text layoutX="48.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
                </children>
             </AnchorPane>
-            <Button layoutX="898.0" layoutY="560.0" mnemonicParsing="false" onAction="#completeSignUpTwo" styleClass="green-button" text="Nästa" />
-            <Label layoutX="733.0" layoutY="697.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
-            <Button layoutX="1140.0" layoutY="697.0" mnemonicParsing="false" onAction="#goToLogin" styleClass="text-button" text="här" />
+            <Button layoutX="898.0" layoutY="570.0" mnemonicParsing="false" onAction="#completeSignUpTwo" styleClass="green-button" text="Nästa" />
+            <Label layoutX="733.0" layoutY="730.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
+            <Button layoutX="1140.0" layoutY="730.0" mnemonicParsing="false" onAction="#goToLogin" styleClass="text-button" text="här" />
             <AnchorPane layoutX="335.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1250.0" stylesheets="@../../../imat.css">
                <children>
                   <Label layoutY="67.0" styleClass="progress-label" text="Personuppgifter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
@@ -420,13 +287,27 @@
             <Text layoutX="1250.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
             <Text layoutX="1250.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
             <Text layoutX="827.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
-            <Label layoutX="738.0" layoutY="652.0" styleClass="text-small" text="Obligatoriska fält markeras med" />
-            <Text layoutX="1170.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+            <Label layoutX="738.0" layoutY="660.0" styleClass="text-small" text="Obligatoriska fält markeras med" />
+            <Text layoutX="1170.0" layoutY="685.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="signupComplete" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Button layoutX="931.0" layoutY="568.0" mnemonicParsing="false" onAction="#goToDelivery" styleClass="green-button" text="Fortsätt" />
+            <Text layoutX="931.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Ditt konto är nu skapat!" />
+            <Text layoutX="931.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-text" text="Tack för att du väljet iMat!" />
+            <ImageView fitHeight="420.0" fitWidth="427.0" layoutX="449.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/undraw_gone_shopping_vwmc (1).png" />
+               </image></ImageView>
+            <javafx.scene.layout.VBox layoutX="27.0" layoutY="126.0" />
+            <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="deliveryScreen" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="delivery-screen" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button layoutX="878.0" layoutY="875.0" mnemonicParsing="false" onAction="#placeOrder" styleClass="green-button" text="Fortsätt" />
+            <Button layoutX="878.0" layoutY="855.0" mnemonicParsing="false" onAction="#placeOrder" styleClass="green-button" text="Fortsätt" />
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
@@ -564,27 +445,31 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-9:59">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="time1" />
+                                             </toggleGroup>
+                                          </ToggleButton>
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.rowIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="14:00-15:59" toggleGroup="$time1" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" selected="true" text="10:00-11:59" toggleGroup="$time1" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="16:00-17:59" toggleGroup="$time1" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="2">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="12:00-13:59" toggleGroup="$time1" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -593,7 +478,7 @@
                                           <String fx:value="active" />
                                        </styleClass>
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="18:00-19:59" toggleGroup="$time1" />
                                        </children>
                                     </Pane>
                                  </children>
@@ -619,27 +504,31 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-9:59">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="time2" />
+                                             </toggleGroup>
+                                          </ToggleButton>
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.rowIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="14:00-15:59" toggleGroup="$time2" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" selected="true" text="10:00-11:59" toggleGroup="$time2" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="16:00-17:59" toggleGroup="$time2" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="2">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="12:00-13:59" toggleGroup="$time2" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -648,7 +537,7 @@
                                           <String fx:value="active" />
                                        </styleClass>
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="18:00-19:59" toggleGroup="$time2" />
                                        </children>
                                     </Pane>
                                  </children>
@@ -674,27 +563,31 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-9:59">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="time3" />
+                                             </toggleGroup>
+                                          </ToggleButton>
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.rowIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="14:00-15:59" toggleGroup="$time3" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" selected="true" text="10:00-11:59" toggleGroup="$time3" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="16:00-17:59" toggleGroup="$time3" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="2">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="12:00-13:59" toggleGroup="$time3" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -703,7 +596,7 @@
                                           <String fx:value="active" />
                                        </styleClass>
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="18:00-19:59" toggleGroup="$time3" />
                                        </children>
                                     </Pane>
                                  </children>
@@ -729,27 +622,31 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-9:59">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="time4" />
+                                             </toggleGroup>
+                                          </ToggleButton>
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.rowIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="14:00-15:59" toggleGroup="$time4" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" selected="true" text="10:00-11:59" toggleGroup="$time4" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="16:00-17:59" toggleGroup="$time4" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="2">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="12:00-13:59" toggleGroup="$time4" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -758,7 +655,7 @@
                                           <String fx:value="active" />
                                        </styleClass>
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="18:00-19:59" toggleGroup="$time4" />
                                        </children>
                                     </Pane>
                                  </children>
@@ -784,27 +681,31 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-9:59">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="time5" />
+                                             </toggleGroup>
+                                          </ToggleButton>
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.rowIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="14:00-15:59" toggleGroup="$time5" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" selected="true" text="10:00-11:59" toggleGroup="$time5" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="16:00-17:59" toggleGroup="$time5" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="2">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="12:00-13:59" toggleGroup="$time5" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -813,7 +714,7 @@
                                           <String fx:value="active" />
                                        </styleClass>
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="18:00-19:59" toggleGroup="$time5" />
                                        </children>
                                     </Pane>
                                  </children>
@@ -839,27 +740,31 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-9:59">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="time6" />
+                                             </toggleGroup>
+                                          </ToggleButton>
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.rowIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="14:00-15:59" toggleGroup="$time6" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" selected="true" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" selected="true" text="10:00-11:59" toggleGroup="$time6" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="16:00-17:59" toggleGroup="$time6" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="delivery-time" GridPane.columnIndex="2">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="8:00-12:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="12:00-13:59" toggleGroup="$time6" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -868,7 +773,7 @@
                                           <String fx:value="active" />
                                        </styleClass>
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="13:00-17:59" toggleGroup="$time" />
+                                          <ToggleButton mnemonicParsing="false" text="18:00-19:59" toggleGroup="$time6" />
                                        </children>
                                     </Pane>
                                  </children>
@@ -881,18 +786,137 @@
             </TabPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="signupComplete" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="signupOne" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
+               </children>
+            </AnchorPane>
+            <Button layoutX="896.0" layoutY="844.0" mnemonicParsing="false" onAction="#completeSignUpOne" styleClass="green-button" text="Nästa" />
+            <Label layoutX="731.0" layoutY="980.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
+            <Button layoutX="1137.0" layoutY="980.0" mnemonicParsing="false" onAction="#goToLogin" styleClass="text-button" text="här" />
+            <AnchorPane layoutX="335.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1250.0" stylesheets="@../../../imat.css">
+               <children>
+                  <Label layoutY="67.0" text="Personuppgifter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-label" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="493.0" layoutY="68.0" styleClass="progress-label" text="Leveransinformation" AnchorPane.bottomAnchor="0.0" />
+                  <Label layoutX="1025.0" layoutY="68.0" styleClass="progress-label" text="Betalningsinformation" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="114.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" styleClass="progress-bar" width="1000.0" />
+                  <Circle fill="DODGERBLUE" layoutX="114.0" layoutY="29.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-circle" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Circle>
+                  <Circle fill="DODGERBLUE" layoutX="614.0" layoutY="23.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" styleClass="progress-circle" AnchorPane.leftAnchor="596.0" AnchorPane.topAnchor="0.0" />
+                  <Circle fill="DODGERBLUE" layoutX="624.0" layoutY="33.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" styleClass="progress-circle" AnchorPane.leftAnchor="1096.0" AnchorPane.topAnchor="0.0" />
+                  <Label layoutX="107.0" layoutY="6.0" text="1">
+                     <styleClass>
+                        <String fx:value="progress-number" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="610.0" layoutY="5.0" styleClass="progress-number" text="2" />
+                  <Label layoutX="1110.0" layoutY="6.0" styleClass="progress-number" text="3" />
+               </children>
+            </AnchorPane>
+            <TextField fx:id="firstNameInput" accessibleRoleDescription="rd" layoutX="678.0" layoutY="273.0" prefHeight="64.0" prefWidth="272.0" promptText="Förnamn" styleClass="form-input" />
+            <TextField fx:id="lastNameInput" accessibleRoleDescription="rd" layoutX="966.0" layoutY="273.0" prefHeight="64.0" prefWidth="272.0" promptText="Efternamn" styleClass="form-input" />
+            <TextField fx:id="homePhoneInput" accessibleRoleDescription="rd" layoutX="678.0" layoutY="353.0" prefHeight="64.0" prefWidth="560.0" promptText="Telefonnummer (hem)" styleClass="form-input" />
+            <TextField fx:id="cellPhoneInput" accessibleRoleDescription="rd" layoutX="678.0" layoutY="433.0" prefHeight="64.0" prefWidth="560.0" promptText="Telefonnummer (mobil)" styleClass="form-input" />
+            <TextField fx:id="emailInput" accessibleRoleDescription="rd" layoutX="677.0" layoutY="513.0" prefHeight="64.0" prefWidth="560.0" promptText="E-postadress" styleClass="form-input" />
+            <TextField fx:id="repeatEmailInput" accessibleRoleDescription="rd" layoutX="677.0" layoutY="593.0" prefHeight="64.0" prefWidth="560.0" promptText="Upprepa e-postadress" styleClass="form-input" />
+            <PasswordField fx:id="passwordInput" layoutX="677.0" layoutY="673.0" prefHeight="64.0" prefWidth="560.0" promptText="Lösenord" styleClass="form-input" />
+            <PasswordField fx:id="repeatPasswordInput" layoutX="677.0" layoutY="753.0" prefHeight="64.0" prefWidth="560.0" promptText="Upprepa lösenord" styleClass="form-input" />
+            <Text layoutX="953.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+            <Text layoutX="1244.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+            <Text layoutX="1249.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+            <Text layoutX="1249.0" layoutY="602.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+            <Text layoutX="1249.0" layoutY="682.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+            <Text layoutX="1249.0" layoutY="762.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+            <Label layoutX="737.0" layoutY="930.0" styleClass="text-small" text="Obligatoriska fält markeras med" />
+            <Text layoutX="1169.0" layoutY="951.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="signupThree" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@imat.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #FAB005;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Button layoutX="931.0" layoutY="568.0" mnemonicParsing="false" onAction="#goToDelivery" styleClass="green-button" text="Fortsätt" />
-            <Text layoutX="931.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-large" text="Ditt konto är nu skapat!" />
-            <Text layoutX="931.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-text" text="Tack för att du väljet iMat!" />
-            <ImageView fitHeight="420.0" fitWidth="427.0" layoutX="449.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/undraw_gone_shopping_vwmc (1).png" />
-               </image></ImageView>
-            <javafx.scene.layout.VBox layoutX="27.0" layoutY="126.0" />
+            <Button layoutX="898.0" layoutY="568.0" mnemonicParsing="false" onAction="#completeSignUpThree" styleClass="green-button" text="Nästa" />
+            <TextField fx:id="cardholderNameInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="313.0" prefHeight="64.0" prefWidth="560.0" promptText="Namn på kort" styleClass="form-input" />
+            <TextField fx:id="cardNumberInput" accessibleRoleDescription="rd" layoutX="680.0" layoutY="393.0" prefHeight="64.0" prefWidth="560.0" promptText="Kortnummer" styleClass="form-input" />
+            <TextField fx:id="cardExpireMonthInput" accessibleRoleDescription="rd" layoutX="681.0" layoutY="473.0" prefHeight="64.0" prefWidth="176.0" promptText="MM" styleClass="form-input" />
+            <TextField fx:id="cardExpireYearInput" accessibleRoleDescription="rd" layoutX="873.0" layoutY="473.0" prefHeight="64.0" prefWidth="176.0" promptText="ÅÅ" styleClass="form-input" />
+            <TextField fx:id="cvvInput" accessibleRoleDescription="rd" layoutX="1065.0" layoutY="473.0" prefHeight="64.0" prefWidth="176.0" promptText="CVV" styleClass="form-input" />
+            <Label layoutX="733.0" layoutY="760.0" styleClass="form-text" text="Har du redan ett konto? Klicka" />
+            <Button layoutX="1143.0" layoutY="760.0" mnemonicParsing="false" onAction="#goToLogin" styleClass="text-button" text="här" />
+            <AnchorPane layoutX="335.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="1250.0" stylesheets="@../../../imat.css">
+               <children>
+                  <Label layoutY="67.0" styleClass="progress-label" text="Personuppgifter" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+                  <Label layoutX="493.0" layoutY="68.0" styleClass="progress-label" text="Leveransinformation" AnchorPane.bottomAnchor="0.0" />
+                  <Label layoutX="1025.0" layoutY="80.0" text="Betalningsinformation" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-label" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="114.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" styleClass="progress-bar" width="1000.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="119.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" width="1000.0">
+                     <styleClass>
+                        <String fx:value="progress-bar" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Rectangle>
+                  <Circle fill="DODGERBLUE" layoutX="114.0" layoutY="29.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-circle" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Circle>
+                  <Circle fill="DODGERBLUE" layoutX="614.0" layoutY="23.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="596.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-circle" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Circle>
+                  <Circle fill="DODGERBLUE" layoutX="624.0" layoutY="33.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="1096.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="progress-circle" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Circle>
+                  <Label layoutX="106.0" layoutY="6.0" text="1">
+                     <styleClass>
+                        <String fx:value="progress-number" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="610.0" layoutY="6.0" text="2">
+                     <styleClass>
+                        <String fx:value="progress-number" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="1110.0" layoutY="6.0" text="3">
+                     <styleClass>
+                        <String fx:value="progress-number" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Text layoutX="1251.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+            <Text layoutX="1251.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+            <Text layoutX="1251.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+            <Text layoutX="1052.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+            <Text layoutX="861.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
+            <Label layoutX="741.0" layoutY="700.0" prefWidth="1091.0" styleClass="text-small" text="Obligatoriska fält markeras med" />
             <Text layoutX="48.0" layoutY="69.0" onMouseClicked="#goToStart" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="imat-logo" text="iMat" />
+            <Text layoutX="1168.0" layoutY="726.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="required-symbol" text="*" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="startScreen" maxHeight="1080.0" maxWidth="1920.0" minHeight="1080.0" minWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0">

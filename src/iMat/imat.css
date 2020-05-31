@@ -305,17 +305,17 @@ AnchorPane {
 
 .higherButton{
     -fx-background-color: #0dbb29;
+    -fx-cursor: hand;
     -fx-border-radius: 0.0;
     -fx-background-radius: 0.0;
-    -fx-border: 0.0;
 }
 
 .higherButton:hover{
-    -fx-background-color: #027814;
+    /*-fx-background-color: #027814;*/
 }
 
 .higherButton:pressed{
-    -fx-background-color: #065d13;
+   /* -fx-background-color: #065d13;*/
 }
 
 .lowerButton{
@@ -336,7 +336,7 @@ AnchorPane {
 }
 
 .plusMinusButton:hover > .higherButton{
-    -fx-fill: #0dbb29;
+    /*-fx-fill: #0dbb29;*/
 }
 
 .searchBar{
@@ -476,6 +476,7 @@ AnchorPane {
     -fx-font-size: 48.0;
     -fx-font-family: 'Fredoka One';
     -fx-fill: #FFFFFF;
+    -fx-cursor: hand;
 
 }
 

@@ -38,6 +38,8 @@ public class ProductWindow extends AnchorPane {
 	private TextField amountProduct;
 	@FXML
 	private Button buttonLower;
+	@FXML
+	private Button buttonHigher;
 	private iMatController parentController;
 	private ShoppingItem item;
 
@@ -63,7 +65,9 @@ public class ProductWindow extends AnchorPane {
 		imageProduct.setImage(image);
 		addTextLimiter(amountProduct, 2);
 		changeText();
-		outsideColor();
+
+		outsideLowerColor();
+		outsideHigherColor();
 	}
 
 	private void changeText() {
@@ -80,29 +84,38 @@ public class ProductWindow extends AnchorPane {
 
 	@FXML
 	protected void addThisItem(Event event) {
-		parentController.increaseItem(item);
-		changeText();
-		outsideColor();
-		event.consume();
+		if (!max()) {
+			parentController.increaseItem(item);
+			changeText();
+			hoverHigherColor();
+			outsideLowerColor();
+			event.consume();
+		}
+
 	}
 
 	@FXML
 	protected void removeThisItem(Event event) {
-		parentController.decreaseItem(item);
-		changeText();
-		outsideColor();
-		event.consume();
+		if (!zero()) {
+			parentController.decreaseItem(item);
+			changeText();
+			hoverLowerColor();
+			outsideHigherColor();
+			event.consume();
+		}
 	}
 
 	@FXML
 	protected void changedText() {
-		if (parentController.isNumeric(amountProduct.getText())) {
+		if (iMatController.isNumeric(amountProduct.getText())) {
 			double temp = Double.parseDouble(amountProduct.getText());
 			if (temp > -1) {
 				int i = amountProduct.getCaretPosition();
 				parentController.changedAmount(item, temp);
 				changeText();
 				amountProduct.positionCaret(i);
+				outsideLowerColor();
+				outsideHigherColor();
 			}
 
 		}
@@ -120,7 +133,7 @@ public class ProductWindow extends AnchorPane {
 	}
 
 	@FXML
-	public void outsideColor() {
+	public void outsideLowerColor() {
 		if (zero()) {
 			buttonLower.setStyle("-fx-background-color: #e4dfdf;");
 		} else {
@@ -130,7 +143,7 @@ public class ProductWindow extends AnchorPane {
 	}
 
 	@FXML
-	public void hoverColor() {
+	public void hoverLowerColor() {
 		if (zero()) {
 			buttonLower.setStyle("-fx-background-color: #e4dfdf;");
 			buttonLower.setStyle("-fx-cursor: default;");
@@ -141,13 +154,55 @@ public class ProductWindow extends AnchorPane {
 	}
 
 	@FXML
-	public void pressedColor() {
+	public void pressedLowerColor() {
 		if (zero()) {
 			buttonLower.setStyle("-fx-background-color: #e4dfdf;");
+			buttonLower.setStyle("-fx-cursor: default;");
 		} else {
 			buttonLower.setStyle("-fx-background-color: #5a0e0e;");
 		}
 
+	}
+
+	@FXML
+	public void outsideHigherColor() {
+		if (max()) {
+			buttonHigher.setStyle("-fx-background-color: #e4dfdf;");
+		} else {
+			buttonHigher.setStyle("-fx-background-color: #0dbb29;");
+		}
+
+	}
+
+	@FXML
+	public void hoverHigherColor() {
+		if (max()) {
+			buttonHigher.setStyle("-fx-cursor: default;");
+			buttonHigher.setStyle("-fx-background-color: #e4dfdf;");
+		} else {
+			buttonHigher.setStyle("-fx-background-color: #027814;");
+		}
+
+	}
+
+	@FXML
+	public void pressedHigherColor() {
+		if (max()) {
+			buttonHigher.setStyle("-fx-cursor: default;");
+			buttonHigher.setStyle("-fx-background-color: #e4dfdf;");
+		} else {
+			buttonHigher.setStyle("-fx-background-color: #065d13;");
+		}
+
+	}
+
+	private boolean max() {
+		if (amountProduct.getText().equals("99")) {
+			// buttonHigher.setDisable(true);
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	private boolean zero() {
@@ -174,14 +229,13 @@ public class ProductWindow extends AnchorPane {
 
 	@FXML
 	public void closeButtonMouseEntered() {
-		closeProduct.setImage(
-				new Image(getClass().getClassLoader().getResourceAsStream("resources/Group 1_darkred.png")));
+		closeProduct
+				.setImage(new Image(getClass().getClassLoader().getResourceAsStream("resources/Group 1_darkred.png")));
 	}
 
 	@FXML
 	public void closeButtonMousePressed() {
-		closeProduct
-				.setImage(new Image(getClass().getClassLoader().getResourceAsStream("resources/Group 1_red.png")));
+		closeProduct.setImage(new Image(getClass().getClassLoader().getResourceAsStream("resources/Group 1_red.png")));
 	}
 
 	@FXML

@@ -77,6 +77,7 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 		this.parentController = parentController;
 		changeText();
 		addTextLimiter(bought, 2);
+		outsideHigherColor();
 	}
 
 	public ShoppingItem getItem() {
@@ -95,39 +96,38 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 
 	@FXML
 	protected void addThisItem(Event event) {
-		if (!bought.getText().equals("99")) {
+		if (!max()) {
 			parentController.increaseItem(item);
 			changeText();
-			outsideColor();
+			hoverHigherColor();
+			outsideLowerColor();
 			event.consume();
-			if (bought.getText().equals("99")) {
-				buttonHigher.setStyle("-fx-cursor: default;");
-				buttonHigher.setStyle("-fx-background-color: #e4dfdf;");
-			}
 		}
 
 	}
 
 	@FXML
 	protected void removeThisItem(Event event) {
-		buttonHigher.setStyle("-fx-background-color: #0dbb29;");
-		buttonHigher.setStyle("-fx-cursor: Hand;");
-		parentController.decreaseItem(item);
-		changeText();
-		hoverColor();
-		event.consume();
+		if (!zero()) {
+			parentController.decreaseItem(item);
+			changeText();
+			hoverLowerColor();
+			outsideHigherColor();
+			event.consume();
+		}
 	}
 
 	@FXML
 	protected void changedText() {
-		// susem.out.println(bought.getText());
-		if (parentController.isNumeric(bought.getText())) {
+		if (iMatController.isNumeric(bought.getText())) {
 			double temp = Double.parseDouble(bought.getText());
 			if (temp > -1) {
 				int i = bought.getCaretPosition();
 				parentController.changedAmount(item, temp);
 				changeText();
 				bought.positionCaret(i);
+				outsideLowerColor();
+				outsideHigherColor();
 			}
 
 		}
@@ -150,7 +150,7 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 	}
 
 	@FXML
-	public void outsideColor() {
+	public void outsideLowerColor() {
 		if (zero()) {
 			buttonLower.setStyle("-fx-background-color: #e4dfdf;");
 		} else {
@@ -160,7 +160,7 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 	}
 
 	@FXML
-	public void hoverColor() {
+	public void hoverLowerColor() {
 		if (zero()) {
 			buttonLower.setStyle("-fx-background-color: #e4dfdf;");
 			buttonLower.setStyle("-fx-cursor: default;");
@@ -171,13 +171,56 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 	}
 
 	@FXML
-	public void pressedColor() {
+	public void pressedLowerColor() {
 		if (zero()) {
 			buttonLower.setStyle("-fx-background-color: #e4dfdf;");
+			buttonLower.setStyle("-fx-cursor: default;");
 		} else {
 			buttonLower.setStyle("-fx-background-color: #5a0e0e;");
 		}
 
+	}
+
+	@FXML
+	public void outsideHigherColor() {
+		if (max()) {
+			buttonHigher.setStyle("-fx-background-color: #e4dfdf;");
+		} else {
+			buttonHigher.setStyle("-fx-background-color: #0dbb29;");
+		}
+
+	}
+
+	@FXML
+	public void hoverHigherColor() {
+		if (max()) {
+			buttonHigher.setStyle("-fx-cursor: default;");
+			buttonHigher.setStyle("-fx-background-color: #e4dfdf;");
+		} else {
+			buttonHigher.setStyle("-fx-background-color: #027814;");
+		}
+
+	}
+
+	@FXML
+	public void pressedHigherColor() {
+		if (max()) {
+
+			buttonHigher.setStyle("-fx-cursor: default;");
+			buttonHigher.setStyle("-fx-background-color: #e4dfdf;");
+		} else {
+			buttonHigher.setStyle("-fx-background-color: #065d13;");
+		}
+
+	}
+
+	private boolean max() {
+		if (bought.getText().equals("99")) {
+			// buttonHigher.setDisable(true);
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	private boolean zero() {
@@ -206,7 +249,8 @@ public class ProductItem extends AnchorPane implements ShoppingCartListener {
 	public void shoppingCartChanged(CartEvent event) {
 		if (parentController.getCartStatus()) {
 			changeText();
-			outsideColor();
+			outsideLowerColor();
+			outsideHigherColor();
 		}
 
 	}
