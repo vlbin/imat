@@ -71,7 +71,7 @@ public class Cart extends AnchorPane {
 
 	public void updateCartPrice() {
 		totalPriceCart.setText(
-				parentController.roundPrice((IMatDataHandler.getInstance()).getShoppingCart().getTotal(), 2) + " kr");
+				iMatController.roundPrice((IMatDataHandler.getInstance()).getShoppingCart().getTotal(), 2) + " kr");
 	}
 
 	@FXML
